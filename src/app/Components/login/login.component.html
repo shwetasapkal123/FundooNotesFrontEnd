@@ -1,4 +1,5 @@
 <div class="borderStylelogin">
+    <form [formGroup]="loginForm" (ngSubmit)="OnSubmit()">
     <div style="padding-left: 70px;">
         <h1>
             <span style="color: blue; padding-left: 100px;">F</span>
@@ -15,21 +16,21 @@
     <div >
         <mat-form-field class="designEmail" appearance="outline">
             <mat-label>Email or Phone</mat-label>
-            <input matInput placeholder="Email">
-            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                <mat-hint>Hint</mat-hint> -->
+            <input matInput placeholder="Email" formControlName="email">
+            <mat-error>Enter valid Email id</mat-error>
         </mat-form-field>
         <a mat-button style="color: blue;">Forgot email?</a>
     </div>
     <div class="Spaces">
         <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
-            <input matInput placeholder="text">
-            
+            <input matInput placeholder="Password" formControlName="password">
+            <mat-error>Enter valid password</mat-error>
         </mat-form-field>  
         <mat-form-field appearance="outline">
             <mat-label>Confirm</mat-label>
-            <input matInput placeholder="text">
+            <input matInput placeholder="Confirm Password" formControlName="confirmpassword">
+            <mat-error>password not matched</mat-error>
         </mat-form-field>
     </div>
     <div>
@@ -39,7 +40,9 @@
         <a mat-button style="color: blue;">Learn more</a>
     </div>
     <div class="Spacesforbutton">
-        <a mat-button>Create account</a>
-        <button mat-raised-button>Next</button>
+        <a mat-button routerLink="/signup">Create account</a>
+        <!-- <button mat-raised-button>Next</button> -->
+        <button mat-raised-button color="primary">Next</button>
     </div>
+  </form>
 </div>

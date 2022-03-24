@@ -12,13 +12,16 @@
   }
   .borderStyle
   {
+    
     display:flex;justify-content:center;align-items:center;height: 60%;
   }
 .designEmailFind
 {
-  width: 90%;
+  width: 80%;
+  padding-left: 20px;
 }
 .designNextButton
 {
-  padding-left: 300px;
+  color:blue; margin-left: 280px;
+ // padding-left: 300px;
 }

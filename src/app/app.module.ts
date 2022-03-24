@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { FindMailComponent } from './find-mail/find-mail.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
