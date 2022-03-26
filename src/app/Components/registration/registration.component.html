@@ -11,18 +11,18 @@
                 <span style="color: red;">e</span>
             </h1>
             <div>
-                <a mat-button style="font-size: large;">Create your google account</a>
+                <button mat-button class="buttonStyle" style="font-size: large;color: black;">Create your Google Account</button>
             </div>
         </div>
         <div class="Spaces">
             <mat-form-field appearance="outline">
                 <mat-label>First name</mat-label>
-                <input matInput placeholder="First name" formControlName="firstName">
+                <input matInput placeholder="First name" formControlName="firstname">
                 <mat-error>Enter valid first name</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Last name</mat-label>
-                <input matInput placeholder="Last name" formControlName="lastName">
+                <input matInput placeholder="Last name" formControlName="lastname">
                 <mat-error>Enter valid last name</mat-error>
             </mat-form-field>
         </div>
@@ -31,16 +31,16 @@
                 <mat-label>Username</mat-label>
                 <input matInput placeholder="Email" formControlName="email">
                 <mat-error>Enter valid Email id</mat-error>
-                <mat-hint style="font-size: small;">  You can use letters,numbers & periods</mat-hint>
+                <mat-hint style="font-size: small;">You can use letters,numbers & periods</mat-hint>
             </mat-form-field>
         </div>
         <div>
-            <a mat-button style="color: blue; margin-top: 50px;">Use my current email address instead </a>
+            <button mat-button class="buttonStyle" style="margin-top: 20px;">Use my current email address instead </button>
         </div>
         <div class="Spaces">
             <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
-                <input matInput placeholder="Password" formControlName="password">
+                <input  matInput placeholder="Password" formControlName="password">
                 <mat-error>Enter valid password</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
@@ -48,19 +48,14 @@
                 <input matInput placeholder="Confirm password" formControlName="confirmpassword">
                 <mat-error>Password not match</mat-error>
             </mat-form-field>
-    
-            <div>
-                <a mat-button style="color: gray;margin-top: 200px;">Use 8 or more characters with a mix of letters, numbers & symbols </a>
-            </div>
+            <mat-hint style="font-size: small;padding-left: 14px;">Use 8 or more characters with a mix of letters, numbers & symbols </mat-hint>
             <div>
                 <mat-checkbox style="margin-top: 20px;">Show password</mat-checkbox>
             </div>
             
             <div class="Spacesforbutton">
-                <a mat-button routerLink="/signin">Sign in instead</a>
-                <!-- <button mat-flat-button col>Next</button> -->
-                <!-- <button mat-raised-button color="blue">Next</button>  -->
-                <button mat-raised-button color="primary">Next</button>
+                <button mat-button class="buttonStyle" routerLink="/signin">Sign in instead</button>
+                <button mat-button class="buttonStyleforNext">Next</button>
             </div>
         </div>
        </form>
@@ -69,6 +64,5 @@
     <div style="border: 1px ; width:200px;">
         <img src="../assets/accountimg.svg">
         <mat-hint style="font-size: medium; color: black;">One account. All of Google working for you.</mat-hint>
-        <!-- <area coords="34,44,270,350"> -->
     </div>
 </div>

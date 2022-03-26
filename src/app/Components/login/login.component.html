@@ -19,7 +19,7 @@
             <input matInput placeholder="Email" formControlName="email">
             <mat-error>Enter valid Email id</mat-error>
         </mat-form-field>
-        <a mat-button style="color: blue;">Forgot email?</a>
+        <button mat-button class="buttonStyleForForgot"  routerLink="/mailsearch">Forgot email?</button>
     </div>
     <div class="Spaces">
         <mat-form-field appearance="outline">
@@ -27,22 +27,16 @@
             <input matInput placeholder="Password" formControlName="password">
             <mat-error>Enter valid password</mat-error>
         </mat-form-field>  
-        <mat-form-field appearance="outline">
-            <mat-label>Confirm</mat-label>
-            <input matInput placeholder="Confirm Password" formControlName="confirmpassword">
-            <mat-error>password not matched</mat-error>
-        </mat-form-field>
     </div>
     <div>
-        <a mat-button style="color: gray; margin-top: 30px;">Not your computer? Use Guest mode to sign in privately.</a>       
+        <mat-hint mat-button style="color: gray; margin-top: 30px;">Not your computer? Use Guest mode to sign in privately.</mat-hint>       
     </div>
     <div>
         <a mat-button style="color: blue;">Learn more</a>
     </div>
     <div class="Spacesforbutton">
-        <a mat-button routerLink="/signup">Create account</a>
-        <!-- <button mat-raised-button>Next</button> -->
-        <button mat-raised-button color="primary">Next</button>
+        <button mat-button class="buttonStyleforCreate" routerLink="/signup">Create account</button>
+        <button mat-button class="buttonStyleforNext">Next</button>
     </div>
   </form>
 </div>

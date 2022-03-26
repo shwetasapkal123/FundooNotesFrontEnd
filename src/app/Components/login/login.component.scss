@@ -29,5 +29,27 @@
   width: 490px;
   color: blue;
   margin-top: 70px;
+  font-size: medium;
   //justify-content: space-between;
+}
+.buttonStyleforCreate
+{
+  border: 0px;
+  color: blue;
+  font-size: medium;
+  background-color: white;
+}
+.buttonStyleforNext
+{
+  border: 0px;
+  color: white;
+  background-color: blue;
+  height: 50px;width: 60px;
+}
+.buttonStyleForForgot
+{
+  border: 0px;
+  color: blue;
+  font-size: small;
+  background-color: white;
 }
