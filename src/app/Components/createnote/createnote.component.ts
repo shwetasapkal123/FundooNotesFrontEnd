@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatenoteComponent implements OnInit {
 
+  public note:boolean=true;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onNoteClick()
+  {
+    console.log(" ");
+    this.note=false;
+  }
 }
