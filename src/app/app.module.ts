@@ -19,10 +19,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
-import { CreatenoteComponent } from './createnote/createnote.component';
-import { IconsComponent } from './icons/icons.component';
-
-
+import { CreatenoteComponent } from './Components/createnote/createnote.component';
 
 
 @NgModule({
@@ -34,7 +31,6 @@ import { IconsComponent } from './icons/icons.component';
     ResetpasswordComponent,
     DashbordComponent,
     CreatenoteComponent,
-    IconsComponent,
   ],
   imports: [
     BrowserModule,
