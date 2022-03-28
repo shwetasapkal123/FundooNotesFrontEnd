@@ -4,12 +4,18 @@ import { RegistrationComponent } from './Components/registration/registration.co
 import { FindMailComponent } from './find-mail/find-mail.component';
 import { LoginComponent } from './Components/login/login.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { DashbordComponent } from './Components/dashbord/dashbord.component';
 
 const routes: Routes = [
   {path:'signup',component:RegistrationComponent},
   {path:'signin',component:LoginComponent},
   {path:'resetpassword',component:ResetpasswordComponent},
-  {path:'mailsearch',component:FindMailComponent}
+  {path:'mailsearch',component:FindMailComponent},
+  {path:'dashboard',component:DashbordComponent},
+  // {path:'createnote',component:CreatenoteComponent},
+  // {path:'getallnote',component:GetallnoteComponent},
+  // {path:'displaynote',component:DisplaynoteComponent},
+  // {path:'icons',component:IconsComponent}
 ];
 
 @NgModule({

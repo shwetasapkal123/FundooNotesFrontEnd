@@ -9,7 +9,7 @@ export class UserServiceService {
 
   constructor(private httpservice:HttpserviceService) { }
 
-  registration(inputdata:any)
+  registration(data:any)
   {
     let header ={
       headers: new HttpHeaders({
@@ -17,7 +17,7 @@ export class UserServiceService {
       })
     }
 
-     return this.httpservice.postMethodService('user/userSignUp', inputdata, false, header);
+     return this.httpservice.postMethodService('user/userSignUp', data, false, header);
   }
 
   login(data:any)

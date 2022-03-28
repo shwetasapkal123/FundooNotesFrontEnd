@@ -14,6 +14,14 @@ import { FindMailComponent } from './find-mail/find-mail.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DashbordComponent } from './Components/dashbord/dashbord.component';
+import {MatToolbarModule} from '@angular/material/toolbar'; 
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import { CreatenoteComponent } from './createnote/createnote.component';
+import { IconsComponent } from './icons/icons.component';
+
 
 
 
@@ -23,7 +31,10 @@ import { HttpClientModule } from '@angular/common/http';
     RegistrationComponent,
     LoginComponent,
     FindMailComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    DashbordComponent,
+    CreatenoteComponent,
+    IconsComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +45,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,7 @@ import { UserServiceService } from 'src/app/Services/UserServices/user-service.s
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
+
   registerForm!:FormGroup;
   submitted=false;
   show=false;
