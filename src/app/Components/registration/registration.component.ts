@@ -55,18 +55,21 @@ export class RegistrationComponent implements OnInit {
     this.registerForm.reset();
 }
 
-// showdatacheckbox()
-// {
-//   this.show=true;
-//   if(this.show==true)
-//     {
-//       type:'password';
-//     }
-//     else{
-
-//       type:'text';
-//     }
-// }
+//  showdatacheckbox()
+//  {
+//    this.show=true;
+//    var showdata=document.getElementById('')
+//   //  if(this.show==true)
+//   //    {
+//   //     type:'text';
+//   //     value: 1;
+//   //    }
+//   //    else{
+//   //     type:'password';
+      
+//   //    }
+//   if()
+//  }
 
 }
 

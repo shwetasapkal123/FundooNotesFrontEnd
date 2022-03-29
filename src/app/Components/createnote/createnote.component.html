@@ -1,9 +1,11 @@
 <!-- <p>createnote works!</p> -->
 
-<div class="noteSetting" >     
-      <input type="text" style="height:50px;width: 450px;border: 0px;" placeholder="title"> 
-     <input type="text" style="height:50px;width: 450px;border: 0px;" placeholder="Take a note...">  
+<div class="noteSetting" > 
+      <form [formGroup]="createNoteForm" (ngSubmit)="OnSubmit()">    
+      <input type="text" style="height:50px;width: 450px;border: 0px;" placeholder="title" formControlName="title"> 
+     <input type="text" style="height:50px;width: 450px;border: 0px;" placeholder="Take a note..." formControlName="takeNote">  
      <button mat-button style="margin-left:400px; border: 0px;font-size: large;background-color: white;margin-top: 20px;" (click)="onNoteClick()">close</button>
      <app-icons></app-icons>
+   </form>
 </div>
 
