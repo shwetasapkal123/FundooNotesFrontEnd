@@ -8,10 +8,11 @@ import { NoteService } from 'src/app/Services/noteService/note.service';
   styleUrls: ['./createnote.component.scss']
 })
 export class CreatenoteComponent implements OnInit {
-
+  showTitle=false;
   public note:boolean=true;
   createNoteForm!: FormGroup;
   submitted=false;
+ 
 
   constructor( private formbuilder:FormBuilder,private noteservice:NoteService) { }
 
@@ -43,16 +44,24 @@ export class CreatenoteComponent implements OnInit {
     }
   }
 
-  onNoteClick()
+  show()
   {
-    this.note=false;
-    if(this.note=true)
-    {
-      console.log("title");
-    }
-    else
-    {
-      console.log("234");
-    }
+    this.showTitle=true;
   }
+  close()
+  {
+    this.showTitle=false;
+  }
+  // onNoteClick()
+  // {
+  //   this.note=false;
+  //   if(this.note=true)
+  //   {
+  //     console.log("title");
+  //   }
+  //   else
+  //   {
+  //     console.log("234");
+  //   }
+  // }
 }

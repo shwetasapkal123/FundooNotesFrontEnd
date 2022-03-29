@@ -15,12 +15,10 @@ const routes: Routes = [
   {path:'mailsearch',component:FindMailComponent},
   {path:'dashboard',component:DashbordComponent,
  children:[
-  {path:'icons',component:IconsComponent},
   {path:'createnote',component:CreatenoteComponent}
  ] 
 },
   {path:'icons',component:IconsComponent},
-  {path:'createnote',component:CreatenoteComponent}
 ];
 
 @NgModule({
