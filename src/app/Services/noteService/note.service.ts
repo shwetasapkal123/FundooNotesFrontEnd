@@ -13,7 +13,8 @@ export class NoteService {
   {
     let header ={
       headers: new HttpHeaders({
-        'Content-type': 'application/json'     
+        'Content-type': 'application/json', 
+        // 'Authorization':this.token
       })
     }
 

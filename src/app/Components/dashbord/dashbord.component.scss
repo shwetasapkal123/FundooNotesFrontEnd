@@ -1,5 +1,5 @@
 .example-container {
-  border: 2px solid red;
+  //border: 2px solid grey;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -9,6 +9,11 @@
     right: 0;
   }
   
+  .searchimgsetting
+  {
+    margin-left:200px ;
+    //margin-left: 300px; padding-right: 50px;height: 50px;background-color:darkgrey;width: 500px;
+  }
   .example-is-mobile .example-toolbar {
     position: fixed;
     /* Make sure the toolbar will stay on top of the content as it scrolls past. */
@@ -30,3 +35,26 @@
        `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
   }
+  .icon{
+    padding-left: 12px;
+    padding-right: 20px;
+  }
+  .div_wrraper{
+    width: 720px;
+    margin-left: 108px;
+
+  }
+  .from_div_wrraper{
+    background: #f1f3f4;
+  border: 1px solid transparent;
+  max-width: 720px;
+  position: relative;
+  transition: background 100ms ease-in,width 100ms ease-out;
+}
+.searchfrom{
+  margin-left: 36px;
+  margin-left: 36px;
+  border: none;
+  background: none;
+  border-radius: 8px;
+}

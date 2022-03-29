@@ -13,7 +13,12 @@ const routes: Routes = [
   {path:'signin',component:LoginComponent},
   {path:'resetpassword',component:ResetpasswordComponent},
   {path:'mailsearch',component:FindMailComponent},
-  {path:'dashboard',component:DashbordComponent},
+  {path:'dashboard',component:DashbordComponent,
+ children:[
+  {path:'icons',component:IconsComponent},
+  {path:'createnote',component:CreatenoteComponent}
+ ] 
+},
   {path:'icons',component:IconsComponent},
   {path:'createnote',component:CreatenoteComponent}
 ];
