@@ -18,9 +18,9 @@ export class HttpserviceService {
     return this.httpclient.post(this.CommonURL+remUrl,data,token && options);
   }
 
-  getMethodService(remUrl:string, token:boolean=false,options:any)
+  getMethodService()
   {
-    return this.httpclient.get(this.CommonURL+remUrl,token && options)
+
   }
 
   putMethodService()

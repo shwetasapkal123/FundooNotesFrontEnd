@@ -23,7 +23,6 @@ import { CreatenoteComponent } from './Components/createnote/createnote.componen
 import {MatCardModule} from '@angular/material/card';
 import { DisplaynoteComponent } from './Components/displaynote/displaynote.component';
 import { IconsComponent } from './Components/icons/icons.component';
-import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -51,8 +50,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatCardModule,
-    FlexLayoutModule
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
