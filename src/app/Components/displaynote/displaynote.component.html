@@ -1,1 +1,6 @@
-<p>displaynote works!</p>
+
+<div *ngFor="let note of arrayofNote"  fxLayout="row" fxLayoutAlign="space-evenly center" style="border: 1px solid black;width: 100px;margin-left: 50px;">
+        <p>{{note.title}}</p>
+        <p>{{note.description}}</p>
+
+</div>

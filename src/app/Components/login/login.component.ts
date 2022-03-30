@@ -17,15 +17,15 @@ export class LoginComponent implements OnInit {
     this.loginForm=this.formBuilder.group({
       email:['',[Validators.required,Validators.email]],
       password:['',[Validators.required,Validators.minLength(6)]],
-      confirmpassword:['',Validators.required]     
+          
     });
   }
 
   OnSubmit(){
     this.submitted=true;
+    console.log(this.loginForm.value);
     if(this.loginForm.valid)
     {
-      console.log(this.loginForm.value);
 
       let data={
         email:this.loginForm.value.email,
@@ -33,7 +33,9 @@ export class LoginComponent implements OnInit {
       }
       this.user.login(data).subscribe((res:any)=>
       {
-        console.log(res);
+        // console.log(res);
+        console.log("msg",res);
+        localStorage.setItem('token',res.id)
       })
     }
     else

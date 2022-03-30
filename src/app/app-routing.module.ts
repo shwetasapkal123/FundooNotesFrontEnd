@@ -7,6 +7,7 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
 import { DashbordComponent } from './Components/dashbord/dashbord.component';
 import { IconsComponent } from './Components/icons/icons.component';
 import { CreatenoteComponent } from './Components/createnote/createnote.component';
+import { GetallnoteComponent } from './Components/getallnote/getallnote.component';
 
 const routes: Routes = [
   {path:'signup',component:RegistrationComponent},
@@ -15,10 +16,12 @@ const routes: Routes = [
   {path:'mailsearch',component:FindMailComponent},
   {path:'dashboard',component:DashbordComponent,
  children:[
-  {path:'createnote',component:CreatenoteComponent}
+  {path:'getallnotes',component:GetallnoteComponent},
  ] 
-},
+ },
+ 
   {path:'icons',component:IconsComponent},
+  {path:'createnote',component:CreatenoteComponent},
 ];
 
 @NgModule({

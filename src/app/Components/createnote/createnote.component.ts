@@ -25,9 +25,9 @@ export class CreatenoteComponent implements OnInit {
 
   OnSubmit(){
     this.submitted=true;
+    console.log(this.createNoteForm.value);
     if(this.createNoteForm.valid)
     {
-      console.log(this.createNoteForm.value);
 
       let data={
         title:this.createNoteForm.value.title,

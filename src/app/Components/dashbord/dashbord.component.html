@@ -1,16 +1,14 @@
 <!-- <p>dashbord works!</p> -->
 
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-    <mat-toolbar style="border: 1px solid grey;background-color: white;" class="example-toolbar">
+    <mat-toolbar  class="example-toolbar">
       <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-      <img style="height: 40px; padding-left: 20px;" src="../../../assets/keep_2020q4_48dp.png">
+      <img class="keepImage" src="../../../assets/keep_2020q4_48dp.png">
       <h1 class="example-app-name">Keep</h1>
 
-      <div style="border: 2px solid red;width: 600px;margin-left: 100px;height: 40px;padding-top: 7px;color: #5f6368;padding: 7px;">
-      <div style="margin-left: 60px; color: #5f6368;">     
-        <input style="height: 30px;padding-top: 1px; border: 2px solid red;background: #f1f3f4;width: 400px;" type="text" placeholder="Search">
-      </div>
-      <img style=" color: #5f6368;margin-left: 38px;margin-bottom: 30px; " src="../../../assets/search_black_24dp.svg"> 
+      <div class="wholesearchbox">
+        <img style=" color: #5f6368;margin-left: 10px;" src="../../../assets/search_black_24dp.svg">    
+        <input style="height: 30px; border: 0px; background: #f1f3f4;width: 500px;" type="text" placeholder="Search">
       </div>
 
       <img style="padding-left: 30px;padding-top: 10px;" src="../../../assets/refresh_black_24dp.svg">

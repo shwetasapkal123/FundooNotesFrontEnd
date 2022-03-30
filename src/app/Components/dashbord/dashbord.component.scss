@@ -18,8 +18,13 @@
     position: fixed;
     /* Make sure the toolbar will stay on top of the content as it scrolls past. */
     z-index: 2;
+    
   }
   
+  .example-toolbar
+  {
+    border: 1px solid grey;background-color: white;
+  }
   h1.example-app-name {
     margin-left: 8px;
   }
@@ -44,17 +49,21 @@
     margin-left: 108px;
 
   }
-  .from_div_wrraper{
+  .from_wrraper{
     background: #f1f3f4;
-  border: 1px solid transparent;
-  max-width: 720px;
-  position: relative;
-  transition: background 100ms ease-in,width 100ms ease-out;
+    border: 1px solid transparent;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
 }
-.searchfrom{
-  margin-left: 36px;
-  margin-left: 36px;
-  border: none;
-  background: none;
-  border-radius: 8px;
+.wholesearchbox
+{
+  background: #f1f3f4;border: 1px solid transparent; width: 550px;height: 40px;color: #5f6368;margin-left: 80px;
+}
+.headerSetting
+{
+  border: 1px solid grey;background-color: white;
+}
+.keepImage
+{
+  height: 40px; padding-left: 20px;
 }
