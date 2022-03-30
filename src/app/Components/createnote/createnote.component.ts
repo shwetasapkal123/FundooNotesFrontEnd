@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder ,FormGroup, Validators } from '@angular/forms';
 import { NoteService } from 'src/app/Services/noteService/note.service';
 
@@ -8,10 +8,12 @@ import { NoteService } from 'src/app/Services/noteService/note.service';
   styleUrls: ['./createnote.component.scss']
 })
 export class CreatenoteComponent implements OnInit {
+  [x: string]: any;
   showTitle=false;
   public note:boolean=true;
   createNoteForm!: FormGroup;
   submitted=false;
+  @Output() messageEvent = new EventEmitter<any>();
  
 
   constructor( private formbuilder:FormBuilder,private noteservice:NoteService) { }
@@ -36,6 +38,7 @@ export class CreatenoteComponent implements OnInit {
       this.noteservice.addNote(data).subscribe((res:any)=>
       {
         console.log(res);
+        this.messageEvent.emit(res)
       })
     }
     else

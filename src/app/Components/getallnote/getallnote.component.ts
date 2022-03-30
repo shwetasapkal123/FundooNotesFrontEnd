@@ -24,6 +24,7 @@ export class GetallnoteComponent implements OnInit {
       this.notelist=res.data.data
     })
   }
+  
   receiveMessage($event:any){
     this.getallnotes()
   }
