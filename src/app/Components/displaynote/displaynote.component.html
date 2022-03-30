@@ -1,12 +1,14 @@
-
-<div *ngFor="let note of arrayofNote"  fxLayout="row wrap" fxLayoutAlign="space-around center" class="noteDisplaySetting">
-        <div>
-                <p>{{note.title}}</p>
-                <p>{{note.description}}</p>
+<div fxLayout="row wrap">
+        <div *ngFor="let note of arrayofNote" fxLayout="column wrap"  fxLayoutAlign="space-around center" class="noteDisplaySetting">
+                <div>
+                        <p>{{note.title}}</p>
+                        <p>{{note.description}}</p>
+                </div>
+                      
+                <div style="margin-left: -10px;">
+                        <app-icons></app-icons>   
+                </div>
+          
         </div>
-              
-        <div style="margin-left: -10px;">
-                <app-icons></app-icons>   
-        </div>
-  
 </div>
+
