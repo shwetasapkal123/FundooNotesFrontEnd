@@ -7,6 +7,7 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
 import { DashbordComponent } from './Components/dashbord/dashbord.component';
 import { IconsComponent } from './Components/icons/icons.component';
 import { CreatenoteComponent } from './Components/createnote/createnote.component';
+import { GetallnoteComponent } from './Components/getallnote/getallnote.component';
 
 const routes: Routes = [
   {path:'signup',component:RegistrationComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
  ] 
 },
   {path:'icons',component:IconsComponent},
+  {path:'getallnotes',component:GetallnoteComponent},
 ];
 
 @NgModule({

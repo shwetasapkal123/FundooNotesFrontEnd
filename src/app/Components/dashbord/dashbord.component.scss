@@ -44,12 +44,11 @@
     margin-left: 108px;
 
   }
-  .from_div_wrraper{
+  .from_wrraper{
     background: #f1f3f4;
-  border: 1px solid transparent;
-  max-width: 720px;
-  position: relative;
-  transition: background 100ms ease-in,width 100ms ease-out;
+    border: 1px solid transparent;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
 }
 .searchfrom{
   margin-left: 36px;
