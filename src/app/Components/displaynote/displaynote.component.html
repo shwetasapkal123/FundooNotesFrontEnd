@@ -1,11 +1,11 @@
 <div fxLayout="row wrap">
-        <div *ngFor="let note of arrayofNote" fxLayout="column wrap"  fxLayoutAlign="space-around center" class="noteDisplaySetting">
+        <div *ngFor="let note of arrayofNote" fxLayout="column"  fxLayoutAlign="space-around center" class="noteDisplaySetting">
                 <div>
-                        <p>{{note.title}}</p>
-                        <p>{{note.description}}</p>
+                        <p style="font-size: medium;font: bold;margin-left: -100px;">{{note.title}}</p>
+                        <p style="margin-left: -100px;">{{note.description}}</p>
                 </div>
                       
-                <div style="margin-left: -10px;">
+                <div style="padding-left: 70px;">
                         <app-icons></app-icons>   
                 </div>
           

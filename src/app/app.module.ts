@@ -25,6 +25,7 @@ import { DisplaynoteComponent } from './Components/displaynote/displaynote.compo
 import { IconsComponent } from './Components/icons/icons.component';
 import { GetallnoteComponent } from './Components/getallnote/getallnote.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { UpdateComponent } from './Components/update/update.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     CreatenoteComponent,
     DisplaynoteComponent,
     IconsComponent,
-    GetallnoteComponent
+    GetallnoteComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
