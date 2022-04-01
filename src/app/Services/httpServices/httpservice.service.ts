@@ -23,9 +23,9 @@ export class HttpserviceService {
     return this.httpclient.get(this.CommonURL+remUrl,token && options)
   }
 
-  putMethodService()
+  putMethodService(remUrl:string, data:any,token:boolean=false,options:any)
   {
-
+    return this.httpclient.put(this.CommonURL+remUrl,data,token && options)
   }
 
   deleteMethodService()

@@ -38,4 +38,17 @@ export class NoteService {
     }
     return this.httpservice.getMethodService('notes/getNotesList',true,header)
   }
+
+  updateService(data:any)
+  {
+    console.log("token",this.token);
+
+    let header ={
+      headers: new HttpHeaders({
+        'Content-type': 'application/json', 
+        'Authorization':this.token    
+      })
+    }
+    return this.httpservice.postMethodService('notes/updateNotes',data,true,header)
+  }
 }

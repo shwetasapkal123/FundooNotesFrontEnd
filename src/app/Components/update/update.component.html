@@ -1,1 +1,18 @@
-<p>update works!</p>
+ <!-- <p>update works!</p>  -->
+ <div fxLayout="row wrap">
+   <div fxLayout="column"  fxLayoutAlign="space-around center" class="noteDisplaySetting">
+
+    <input type="text" placeholder="Title" class="titleSetting"  [(ngModel)]="title">
+    <input type="text" placeholder="description" class="descriptionSetting"  [(ngModel)]="description">
+
+    <button (click)="onNoClick()" class="updateButton">close</button> 
+    
+    <div style="margin-top: 10px;padding-left: 5px;">
+      <app-icons></app-icons>
+    </div>
+    
+   </div>
+  
+ </div>
+      
+  

@@ -26,6 +26,7 @@ import { IconsComponent } from './Components/icons/icons.component';
 import { GetallnoteComponent } from './Components/getallnote/getallnote.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { UpdateComponent } from './Components/update/update.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { UpdateComponent } from './Components/update/update.component';
     MatIconModule,
     MatListModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
