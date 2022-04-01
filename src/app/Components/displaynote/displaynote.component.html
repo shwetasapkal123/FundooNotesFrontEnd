@@ -1,14 +1,12 @@
 <div fxLayout="row wrap">
-        <div *ngFor="let note of arrayofNote" fxLayout="column"  fxLayoutAlign="space-around center" class="noteDisplaySetting">
+        <div *ngFor="let note of childMsg" fxLayout="column"  fxLayoutAlign="space-around center" class="noteDisplaySetting">
                 <div>
                         <p style="font-size: medium;font: bold;margin-left: -100px;" (click)="openDialog(note)">{{note.title}}</p>
                         <p style="margin-left: -100px;" (click)="openDialog(note)">{{note.description}}</p>
                 </div>
-                   <!-- <div>
-                        {{note.id}}
-                   </div>    -->
+        
                 <div style="margin-left: -115px;">
-                        <app-icons></app-icons>   
+                        <app-icons [childMsg]="note"></app-icons>   
                 </div>
           
         </div>

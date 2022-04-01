@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { NoteService } from 'src/app/Services/noteService/note.service';
+
 
 @Component({
   selector: 'app-icons',
@@ -7,9 +8,8 @@ import { NoteService } from 'src/app/Services/noteService/note.service';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
-  message: any;
-
-
+  //message: any;
+  @Input() childMsg:any;
   //id:any;
   // title:any;
   // description:any;
@@ -21,24 +21,22 @@ export class IconsComponent implements OnInit {
     // this.title=this.data.title;
     //  this.description=this.data.description; 
     //this.archievebutton()
-    console.log("message ",this.message);
+    console.log("message ",this.childMsg);
   }
 
   archievebutton()
   {
 
     let data={
-      noteIdList:[this.message.id],
+      noteIdList:[this.childMsg.id],
       isArchived:true,
     }
     this.note.archieveService(data).subscribe((res:any)=>
     {
       console.log("archive note is =",res);
+      //this.childMsg.emit(res)
     })
   }
 
-  receivedId($event:any)
-  {
-    this.archievebutton()
-  }
+  
 }
