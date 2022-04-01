@@ -8,6 +8,8 @@ import { DashbordComponent } from './Components/dashbord/dashbord.component';
 import { IconsComponent } from './Components/icons/icons.component';
 import { CreatenoteComponent } from './Components/createnote/createnote.component';
 import { GetallnoteComponent } from './Components/getallnote/getallnote.component';
+import { ArchiveComponent } from './Components/archive/archive.component';
+import { TrashComponent } from './Components/trash/trash.component';
 
 const routes: Routes = [
   {path:'signup',component:RegistrationComponent},
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path:'dashboard',component:DashbordComponent,
  children:[
   {path:'getallnotes',component:GetallnoteComponent},
+  {path:'archieve',component:ArchiveComponent},
+  {path:'trash',component:TrashComponent},
  ] 
  },
  

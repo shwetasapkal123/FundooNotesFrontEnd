@@ -51,4 +51,30 @@ export class NoteService {
     }
     return this.httpservice.postMethodService('notes/updateNotes',data,true,header)
   }
+
+  archieveService(data:any)
+  {
+    console.log("token",this.token);
+
+    let header ={
+      headers: new HttpHeaders({
+        'Content-type': 'application/json', 
+         'Authorization':this.token
+      })
+    }
+    return this.httpservice.postMethodService('notes/archiveNotes',data,true,header)
+  }
+
+  archieveNotes()
+  {
+    console.log("token",this.token);
+
+    let header ={
+      headers: new HttpHeaders({
+        'Content-type': 'application/json', 
+         'Authorization':this.token
+      })
+    }
+    return this.httpservice.getMethodService('notes/getArchiveNotesList',true,header)
+  }
 }

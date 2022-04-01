@@ -27,6 +27,8 @@ import { GetallnoteComponent } from './Components/getallnote/getallnote.componen
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { UpdateComponent } from './Components/update/update.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ArchiveComponent } from './Components/archive/archive.component';
+import { TrashComponent } from './Components/trash/trash.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     DisplaynoteComponent,
     IconsComponent,
     GetallnoteComponent,
-    UpdateComponent
+    UpdateComponent,
+    ArchiveComponent,
+    TrashComponent
   ],
   imports: [
     BrowserModule,
