@@ -10,6 +10,8 @@ import { CreatenoteComponent } from './Components/createnote/createnote.componen
 import { GetallnoteComponent } from './Components/getallnote/getallnote.component';
 import { ArchiveComponent } from './Components/archive/archive.component';
 import { TrashComponent } from './Components/trash/trash.component';
+import { EditLabesComponent } from './Components/edit-labes/edit-labes.component';
+import { RemindersComponent } from './Components/reminders/reminders.component';
 
 const routes: Routes = [
   {path:'signup',component:RegistrationComponent},
@@ -21,6 +23,8 @@ const routes: Routes = [
   {path:'getallnotes',component:GetallnoteComponent},
   {path:'archieve',component:ArchiveComponent},
   {path:'trash',component:TrashComponent},
+  {path:'editlabel',component:EditLabesComponent},
+  {path:'reminders',component:RemindersComponent},
  ] 
  },
  

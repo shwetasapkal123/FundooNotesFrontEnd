@@ -30,6 +30,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ArchiveComponent } from './Components/archive/archive.component';
 import { TrashComponent } from './Components/trash/trash.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { EditLabesComponent } from './Components/edit-labes/edit-labes.component';
+import { RemindersComponent } from './Components/reminders/reminders.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import {MatMenuModule} from '@angular/material/menu';
     GetallnoteComponent,
     UpdateComponent,
     ArchiveComponent,
-    TrashComponent
+    TrashComponent,
+    EditLabesComponent,
+    RemindersComponent
   ],
   imports: [
     BrowserModule,
