@@ -38,5 +38,17 @@ export class IconsComponent implements OnInit {
     })
   }
 
+  trashbutton()
+  {
+
+    let data={
+      noteIdList:[this.childMsg.id],
+      isDeleted:true,
+    }
+    this.note.trashService(data).subscribe((res:any)=>
+    {
+      console.log("trash notes are: ",res);
+    })
+  }
   
 }
