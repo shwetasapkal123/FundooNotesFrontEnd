@@ -29,6 +29,7 @@ import { UpdateComponent } from './Components/update/update.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ArchiveComponent } from './Components/archive/archive.component';
 import { TrashComponent } from './Components/trash/trash.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { TrashComponent } from './Components/trash/trash.component';
     MatListModule,
     MatCardModule,
     FlexLayoutModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
