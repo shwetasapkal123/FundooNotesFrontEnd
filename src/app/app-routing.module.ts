@@ -12,13 +12,17 @@ import { ArchiveComponent } from './Components/archive/archive.component';
 import { TrashComponent } from './Components/trash/trash.component';
 import { EditLabesComponent } from './Components/edit-labes/edit-labes.component';
 import { RemindersComponent } from './Components/reminders/reminders.component';
+import { AuthenticationGuard } from './guard/authentication.guard';
 
 const routes: Routes = [
+  {path:'',redirectTo:"/login",pathMatch:'full'},
+  {path:'login',component:LoginComponent},
+
   {path:'signup',component:RegistrationComponent},
-  {path:'signin',component:LoginComponent},
+  
   {path:'resetpassword',component:ResetpasswordComponent},
   {path:'mailsearch',component:FindMailComponent},
-  {path:'dashboard',component:DashbordComponent,
+  {path:'dashboard',component:DashbordComponent,canActivate:[AuthenticationGuard],
  children:[
   {path:'getallnotes',component:GetallnoteComponent},
   {path:'archieve',component:ArchiveComponent},

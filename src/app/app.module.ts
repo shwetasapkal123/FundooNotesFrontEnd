@@ -32,6 +32,9 @@ import { TrashComponent } from './Components/trash/trash.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { EditLabesComponent } from './Components/edit-labes/edit-labes.component';
 import { RemindersComponent } from './Components/reminders/reminders.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { AuthguardServiceService } from './Services/authguard-service.service';
+
 
 @NgModule({
   declarations: [
@@ -68,9 +71,13 @@ import { RemindersComponent } from './Components/reminders/reminders.component';
     MatCardModule,
     FlexLayoutModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    MatGridListModule,
   ],
-  providers: [],
+  providers: [
+
+    AuthguardServiceService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

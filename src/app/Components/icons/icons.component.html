@@ -1,12 +1,11 @@
 <!-- <p>icons works!</p> -->
 
 <div class="iconsSetting">
-    <button (click)="archievebutton()" style="border: 0px;background-color: white;"><img  src="../../../assets/archive_black_24dp.svg"></button>
     <button style="border: 0px;background-color: white;"><img  src="../../../assets/add_alert_black_24dp.svg"></button> 
     <button style="border: 0px;background-color: white;"><img src="../../../assets/person_add_alt_black_24dp.svg"></button>
-    <button style="border: 0px;background-color: white;"><img src="../../../assets/image_black_24dp.svg"></button>
     <button style="border: 0px;background-color: white;"><img src="../../../assets/palette_black_24dp.svg"></button>
-    
+    <button style="border: 0px;background-color: white;"><img src="../../../assets/image_black_24dp.svg"></button>
+    <button (click)="archievebutton()" style="border: 0px;background-color: white;"><img  src="../../../assets/archive_black_24dp.svg"></button>
     <button mat-button [matMenuTriggerFor]="more" style="border: 0px;background-color: white;"><img src="../../../assets/more_vert_black_24dp.svg"></button>
     <mat-menu #more="matMenu">
     <button mat-menu-item (click)="trashbutton()">Delete note</button>

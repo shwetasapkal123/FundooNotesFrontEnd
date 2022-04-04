@@ -9,6 +9,7 @@ import { CreatenoteComponent } from '../createnote/createnote.component';
 })
 export class DashbordComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
+  grid=false;
 
   fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
 
@@ -34,4 +35,8 @@ export class DashbordComponent implements OnDestroy {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
+  gridlist()
+  {
+    this.grid=true;
+  }
 }
