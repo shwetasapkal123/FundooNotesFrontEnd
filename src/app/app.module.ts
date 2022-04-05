@@ -25,6 +25,17 @@ import { DisplaynoteComponent } from './Components/displaynote/displaynote.compo
 import { IconsComponent } from './Components/icons/icons.component';
 import { GetallnoteComponent } from './Components/getallnote/getallnote.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { UpdateComponent } from './Components/update/update.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ArchiveComponent } from './Components/archive/archive.component';
+import { TrashComponent } from './Components/trash/trash.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { EditLabesComponent } from './Components/edit-labes/edit-labes.component';
+import { RemindersComponent } from './Components/reminders/reminders.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { AuthguardServiceService } from './Services/authguard-service.service';
+
+
 
 @NgModule({
   declarations: [
@@ -37,7 +48,12 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     CreatenoteComponent,
     DisplaynoteComponent,
     IconsComponent,
-    GetallnoteComponent
+    GetallnoteComponent,
+    UpdateComponent,
+    ArchiveComponent,
+    TrashComponent,
+    EditLabesComponent,
+    RemindersComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,9 +70,15 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatIconModule,
     MatListModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDialogModule,
+    MatMenuModule,
+    MatGridListModule,
   ],
-  providers: [],
+  providers: [
+
+    AuthguardServiceService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

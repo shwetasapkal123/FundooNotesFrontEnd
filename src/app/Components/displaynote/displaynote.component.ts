@@ -1,4 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { UpdateComponent } from '../update/update.component';
+import { filter } from 'rxjs';
+
 
 @Component({
   selector: 'app-displaynote',
@@ -6,12 +10,30 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./displaynote.component.scss']
 })
 export class DisplaynoteComponent implements OnInit {
-
-  @Input() arrayofNote:any;
+ note:any;
+ public arrayNote=[] as any;
+  @Input() childMsg:any;
+  filteredString:string='';
   
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    
   }
 
+  openDialog(note:any): void {
+    const dialogRef = this.dialog.open(UpdateComponent, {
+      width: '400px',
+      data: note,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.note=result
+    });
+  }
+  receivedId($event:any)
+  {
+    this.openDialog(this.note)
+  }
 }

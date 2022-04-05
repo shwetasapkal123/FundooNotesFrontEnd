@@ -8,15 +8,28 @@ import { DashbordComponent } from './Components/dashbord/dashbord.component';
 import { IconsComponent } from './Components/icons/icons.component';
 import { CreatenoteComponent } from './Components/createnote/createnote.component';
 import { GetallnoteComponent } from './Components/getallnote/getallnote.component';
+import { ArchiveComponent } from './Components/archive/archive.component';
+import { TrashComponent } from './Components/trash/trash.component';
+import { EditLabesComponent } from './Components/edit-labes/edit-labes.component';
+import { RemindersComponent } from './Components/reminders/reminders.component';
+import { AuthenticationGuard } from './guard/authentication.guard';
 
 const routes: Routes = [
   {path:'signup',component:RegistrationComponent},
-  {path:'signin',component:LoginComponent},
+  
   {path:'resetpassword',component:ResetpasswordComponent},
   {path:'mailsearch',component:FindMailComponent},
-  {path:'dashboard',component:DashbordComponent,
+
+  {path:'',redirectTo:"/login",pathMatch:'full'},
+  {path:'login',component:LoginComponent},
+
+  {path:'dashboard',component:DashbordComponent,canActivate:[AuthenticationGuard],
  children:[
   {path:'getallnotes',component:GetallnoteComponent},
+  {path:'archieve',component:ArchiveComponent},
+  {path:'trash',component:TrashComponent},
+  {path:'editlabel',component:EditLabesComponent},
+  {path:'reminders',component:RemindersComponent},
  ] 
  },
  

@@ -4,15 +4,25 @@
       <form [formGroup]="createNoteForm" (ngSubmit)="OnSubmit()"> 
             <div *ngIf="showTitle">
                <input type="text" style="height:50px;width: 450px;border: 0px;" placeholder="title" formControlName="title"> 
+               <img style="padding-left: 100px;" src="../../../assets/push_pin_black_24dp.svg">
             </div>
 
             <div *ngIf="!showTitle  || showTitle">
                 <input type="text" class="takenoteSeting" (click)="show()" placeholder="Take a note..." formControlName="takeNote">  
+                <span *ngIf="!showTitle">
+                  <img src="../../../assets/check_box_black_24dp.svg">
+                <img style="padding-left: 20px;" src="../../../assets/brush_black_24dp (1).svg">               
+                <img style="padding-left: 30px;" src="../../../assets/image_black_24dp.svg">
+                </span>
+                
             </div>   
             <div *ngIf="showTitle">
                   <button mat-button class="closebuttonSetting">close</button>
-            </div>   
-     <app-icons></app-icons>
+            </div> 
+            <div *ngIf="showTitle">
+                  <app-icons></app-icons>
+            </div>  
+     
    </form>
 </div>
 
