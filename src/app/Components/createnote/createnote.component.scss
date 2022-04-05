@@ -1,6 +1,9 @@
 .noteSetting
 {
-    border: 2px solid grey;
+    border: 1px solid ;
+    border-color:#5f6368 ;
+    box-shadow: 1px 1px 1px 1px gray;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     width: 600px;
@@ -17,5 +20,5 @@
 }
 .closebuttonSetting
 {
-    margin-left:400px; border: 0px;font-size: large;background-color: white;margin-top: 20px;
+    margin-left:520px; border: 0px;font-size: large;background-color: white;margin-top: 20px;
 }
