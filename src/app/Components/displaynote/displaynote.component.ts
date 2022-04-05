@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateComponent } from '../update/update.component';
+import { filter } from 'rxjs';
+
 
 @Component({
   selector: 'app-displaynote',
@@ -9,12 +11,14 @@ import { UpdateComponent } from '../update/update.component';
 })
 export class DisplaynoteComponent implements OnInit {
  note:any;
+ public arrayNote=[] as any;
   @Input() childMsg:any;
-  
+  filteredString:string='';
   
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    
   }
 
   openDialog(note:any): void {

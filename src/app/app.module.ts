@@ -36,6 +36,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { AuthguardServiceService } from './Services/authguard-service.service';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,7 @@ import { AuthguardServiceService } from './Services/authguard-service.service';
     ArchiveComponent,
     TrashComponent,
     EditLabesComponent,
-    RemindersComponent
+    RemindersComponent,
   ],
   imports: [
     BrowserModule,

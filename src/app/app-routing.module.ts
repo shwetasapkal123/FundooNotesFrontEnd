@@ -15,13 +15,14 @@ import { RemindersComponent } from './Components/reminders/reminders.component';
 import { AuthenticationGuard } from './guard/authentication.guard';
 
 const routes: Routes = [
-  {path:'',redirectTo:"/login",pathMatch:'full'},
-  {path:'login',component:LoginComponent},
-
   {path:'signup',component:RegistrationComponent},
   
   {path:'resetpassword',component:ResetpasswordComponent},
   {path:'mailsearch',component:FindMailComponent},
+
+  {path:'',redirectTo:"/login",pathMatch:'full'},
+  {path:'login',component:LoginComponent},
+
   {path:'dashboard',component:DashbordComponent,canActivate:[AuthenticationGuard],
  children:[
   {path:'getallnotes',component:GetallnoteComponent},

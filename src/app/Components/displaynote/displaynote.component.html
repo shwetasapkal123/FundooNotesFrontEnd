@@ -1,7 +1,10 @@
 <div fxLayout="row wrap">
+        <!-- <div>
+                <input type="text"[(ngModel)]="filteredString">
+        </div> -->
         <div *ngFor="let note of childMsg" fxLayout="column"  fxLayoutAlign="space-around center" class="noteDisplaySetting">
                 <div>
-                        <p style="font-size: medium;font: bold;margin-left: -100px;" (click)="openDialog(note)">{{note.title}}</p>
+                        <p style="font-size: medium;font: bold;margin-left: -100px;" (click)="openDialog(note)" >{{note.title}}</p>
                         <p style="margin-left: -100px;" (click)="openDialog(note)">{{note.description}}</p>
                 </div>
         
