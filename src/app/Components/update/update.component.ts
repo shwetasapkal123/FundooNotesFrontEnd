@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NoteService } from 'src/app/Services/noteService/note.service';
 
@@ -11,6 +11,7 @@ export class UpdateComponent implements OnInit {
   id:any;
   title:any;
   description:any;
+  updateMessage="note refresh"
 
   constructor(private note:NoteService, public dialogRef: MatDialogRef<UpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,) { }
@@ -20,6 +21,7 @@ export class UpdateComponent implements OnInit {
    this.title=this.data.title;
     this.description=this.data.description;
   //console.log("data= ",this.data)
+  // this.onNoClick()
   }
 
   onNoClick(): void {
@@ -35,5 +37,10 @@ export class UpdateComponent implements OnInit {
       console.log("update response=",res);
     })
     this.dialogRef.close();
+  }
+
+  receiveMessage($event:any){
+    // this.dialogRef.close();
+    this.onNoClick()
   }
 }

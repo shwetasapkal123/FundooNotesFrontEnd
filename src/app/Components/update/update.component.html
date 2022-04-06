@@ -2,13 +2,15 @@
  <div fxLayout="row wrap">
    <div fxLayout="column"  fxLayoutAlign="space-around center" class="noteDisplaySetting">
 
-    <input type="text" placeholder="Title" class="titledescSetting"  [(ngModel)]="title">
-    <input type="text" placeholder="description" class="descriptionSetting"  [(ngModel)]="description">
+    <input type="text" placeholder="Title" style="font-size: larger;height: 20px;width: 100%;" [(ngModel)]="title">
+    <input type="text" placeholder="description" style="font-size: medium;margin-top: 10px;margin-left: 1px;height: 20px;width: 100%;"[(ngModel)]="description">
 
-    <button (click)="onNoClick()" class="updateButton">close</button> 
     
-    <div style="margin-top: 10px;margin-left: -120px;">
-      <app-icons></app-icons>
+    
+    <div style="display: flex;">
+      <app-icons style="margin-top: 30px;" (refreshUpdate)="receiveMessage($event)"></app-icons>
+      <button (click)="onNoClick()" class="closeButton">close</button> 
+      
     </div>
     
    </div>

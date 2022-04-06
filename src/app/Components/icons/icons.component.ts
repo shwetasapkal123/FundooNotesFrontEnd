@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NoteService } from 'src/app/Services/noteService/note.service';
 
 
@@ -10,10 +10,12 @@ import { NoteService } from 'src/app/Services/noteService/note.service';
 export class IconsComponent implements OnInit {
   //message: any;
   @Input() childMsg:any;
-  //id:any;
-  // title:any;
-  // description:any;
- //public data: any;
+
+  @Output() refresh = new EventEmitter<any>();
+  archieveMessage="refresh archieve"
+  trashMessage="trash refresh"
+  trashclick=false;
+
   constructor(private note:NoteService,) { }
 
   ngOnInit(): void {
@@ -34,13 +36,13 @@ export class IconsComponent implements OnInit {
     this.note.archieveService(data).subscribe((res:any)=>
     {
       console.log("archive note is =",res);
+      this.refresh.emit(this.archieveMessage);
       //this.childMsg.emit(res)
     })
   }
 
   trashbutton()
   {
-
     let data={
       noteIdList:[this.childMsg.id],
       isDeleted:true,
@@ -48,7 +50,11 @@ export class IconsComponent implements OnInit {
     this.note.trashService(data).subscribe((res:any)=>
     {
       console.log("trash notes are: ",res);
+      this.refresh.emit(this.trashMessage);
     })
   }
-  
+  // trashShow()
+  // {
+  //   this.trashclick=true;
+  // }
 }

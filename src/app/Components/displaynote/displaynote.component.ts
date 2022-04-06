@@ -11,10 +11,10 @@ import { filter } from 'rxjs';
 })
 export class DisplaynoteComponent implements OnInit {
  note:any;
- public arrayNote=[] as any;
   @Input() childMsg:any;
-  filteredString:string='';
-  
+  @Output() refreshEvent = new EventEmitter<any>();
+  @Output() refreshUpdate = new EventEmitter<any>();
+  displayMessage="note refresh"
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -30,10 +30,14 @@ export class DisplaynoteComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.note=result
+      this.refreshUpdate.emit(this.displayMessage)
     });
   }
-  receivedId($event:any)
+  receivedMessage(event:any)
   {
-    this.openDialog(this.note)
+    console.log(event);
+    this.refreshEvent.emit(this.displayMessage)
+    //console.log(this.displayMessage);
+    // this.refreshEvent.emit(this.displayMessage)
   }
 }

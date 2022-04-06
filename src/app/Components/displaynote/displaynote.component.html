@@ -9,7 +9,7 @@
                 </div>
         
                 <div style="margin-left: -115px;">
-                        <app-icons [childMsg]="note"></app-icons>   
+                        <app-icons (refresh)="receivedMessage($event)" [childMsg]="note"></app-icons>   
                 </div>
           
         </div>

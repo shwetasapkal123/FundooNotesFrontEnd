@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NoteService } from 'src/app/Services/noteService/note.service';
 
 @Component({
@@ -7,8 +7,8 @@ import { NoteService } from 'src/app/Services/noteService/note.service';
   styleUrls: ['./archive.component.scss']
 })
 export class ArchiveComponent implements OnInit {
-  archivelist:any;
-
+  archivelist:any; 
+  archieveMessage="refresh archieve"
   constructor( private noteservice:NoteService) { }
 
   ngOnInit(): void {
@@ -23,4 +23,8 @@ export class ArchiveComponent implements OnInit {
       console.log("archive notes",this.archivelist)
    })
   }
+  receiveMessage(event:any){
+ this.archieveNotesService()
+  }
+
 }

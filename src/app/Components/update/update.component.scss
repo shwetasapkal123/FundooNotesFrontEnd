@@ -1,14 +1,16 @@
 .noteDisplaySetting
 {
+    display: flex;
+    flex-direction: row;
     //border: 1px solid green; 
     //width:600px;
     //margin-left: 5px;
-    border-color: #e0e0e0;
-    margin-top: 5px;
-    border-radius: 14px;
-    width: 200px;
-    height: 150px;
-    padding-top: 10px;
+    // border-color: #e0e0e0;
+    // margin-top: 5px;
+    // border-radius: 14px;
+    // width: 200px;
+    // height: 150px;
+    // padding-top: 10px;
 }
 .titledescSetting
 {
@@ -26,12 +28,10 @@
     margin-left: 10px;
     font-size: large;
 }
-.updateButton
+.closeButton
 {
-    margin-top: 50px;
+    margin-left: 140px;
     border: 0px;
-    margin-left: 450px;
-    border: 0px;
-    font-size: large;
-        height: 50px;width: 60px;
+    height: 30px;
+    margin-top: 24px;
 }
