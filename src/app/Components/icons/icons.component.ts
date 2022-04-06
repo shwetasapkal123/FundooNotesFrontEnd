@@ -74,7 +74,7 @@ export class IconsComponent implements OnInit {
     })
   }
 
-  unarchivenotes(){
+  unarchivebutton(){
     let data = {
       noteIdList: [this.childMsg.id],
       isArchived: false,
