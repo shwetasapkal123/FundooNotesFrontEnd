@@ -1,17 +1,30 @@
 <!-- <p>icons works!</p> -->
-
-<div class="iconsSetting">
-    <button style="border: 0px;background-color: white;"><img  src="../../../assets/add_alert_black_24dp.svg"></button> 
-    <button style="border: 0px;background-color: white;"><img src="../../../assets/person_add_alt_black_24dp.svg"></button>
-    <button style="border: 0px;background-color: white;"><img src="../../../assets/palette_black_24dp.svg"></button>
-    <button style="border: 0px;background-color: white;"><img src="../../../assets/image_black_24dp.svg"></button>
-    <button (click)="archievebutton()" style="border: 0px;background-color: white;"><img  src="../../../assets/archive_black_24dp.svg"></button>
-    <button mat-button [matMenuTriggerFor]="more" style="border: 0px;background-color: white;"><img src="../../../assets/more_vert_black_24dp.svg"></button>
-    <mat-menu #more="matMenu">
-    <button mat-menu-item (click)="trashbutton()">Delete note</button>
-    <!-- <div>
-        <button><img src="../../../assets/delete_forever_black_24dp.svg"></button>
-        <button><img src="../../../assets/restore_from_trash_black_24dp.svg"></button>
-    </div> -->
-    </mat-menu>
+<div *ngIf="(!isDisplayNoteComponent && isArchieveComponent || !isTrashComponent ); else Trash">
+    <div class="iconsSetting">
+        <button style="border: 0px;background-color: white;"><img src="../../../assets/add_alert_black_24dp.svg"></button> 
+        <button style="border: 0px;background-color: white;"><img src="../../../assets/person_add_alt_black_24dp.svg"></button>
+        <button style="border: 0px;background-color: white;"><img src="../../../assets/palette_black_24dp.svg"></button>
+        <button style="border: 0px;background-color: white;"><img src="../../../assets/image_black_24dp.svg"></button>
+        <div *ngIf="!isArchieveComponent; else unarchieve">
+            <button (click)="archievebutton()" style="border: 0px;background-color: white;"><img src="../../../assets/archive_black_24dp.svg"></button>
+        </div>
+    
+        <button mat-button [matMenuTriggerFor]="more" style="border: 0px;background-color: white;"><img src="../../../assets/more_vert_black_24dp.svg"></button>
+        <mat-menu #more="matMenu">
+        <button mat-menu-item (click)="trashbutton()" (click)="trashShow()">Delete note</button>
+        </mat-menu>
+       
+    </div>
+    
 </div>
+
+<ng-template #Trash>
+    <div>
+        <button style="border: 0px;background-color: white;"><img src="../../../assets/delete_forever_black_24dp.svg"></button>
+        <button style="border: 0px;background-color: white;"><img src="../../../assets/restore_from_trash_black_24dp.svg"></button>
+    </div>
+</ng-template>
+
+<ng-template #unarchieve>
+    <button style="border: 0px;background-color: white;"><img src="../../../assets/unarchive_black_24dp.svg"></button>
+</ng-template>

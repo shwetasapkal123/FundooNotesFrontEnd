@@ -11,7 +11,8 @@ export class UpdateComponent implements OnInit {
   id:any;
   title:any;
   description:any;
-  updateMessage="note refresh"
+  @Output() refreshUpdate = new EventEmitter<any>();
+  upateMessage="refresh Update"
 
   constructor(private note:NoteService, public dialogRef: MatDialogRef<UpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,) { }
@@ -20,8 +21,8 @@ export class UpdateComponent implements OnInit {
     this.id=this.data.id;
    this.title=this.data.title;
     this.description=this.data.description;
-  //console.log("data= ",this.data)
-  // this.onNoClick()
+    //console.log("data= ",this.data)
+    // this.onNoClick()
   }
 
   onNoClick(): void {
@@ -35,12 +36,9 @@ export class UpdateComponent implements OnInit {
     this.note.updateService(data).subscribe((res:any)=>
     {
       console.log("update response=",res);
+      this.refreshUpdate.emit(res)
     })
     this.dialogRef.close();
   }
 
-  receiveMessage($event:any){
-    // this.dialogRef.close();
-    this.onNoClick()
-  }
 }

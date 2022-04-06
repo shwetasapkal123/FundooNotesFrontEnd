@@ -13,7 +13,7 @@ export class DisplaynoteComponent implements OnInit {
  note:any;
   @Input() childMsg:any;
   @Output() refreshEvent = new EventEmitter<any>();
-  @Output() refreshUpdate = new EventEmitter<any>();
+  
   displayMessage="note refresh"
   constructor(public dialog: MatDialog) { }
 
@@ -30,7 +30,6 @@ export class DisplaynoteComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.note=result
-      this.refreshUpdate.emit(this.displayMessage)
     });
   }
   receivedMessage(event:any)

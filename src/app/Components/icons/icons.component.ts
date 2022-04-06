@@ -1,5 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NoteService } from 'src/app/Services/noteService/note.service';
+import { ArchiveComponent } from '../archive/archive.component';
+import { DisplaynoteComponent } from '../displaynote/displaynote.component';
+import { TrashComponent } from '../trash/trash.component';
 
 
 @Component({
@@ -15,15 +19,31 @@ export class IconsComponent implements OnInit {
   archieveMessage="refresh archieve"
   trashMessage="trash refresh"
   trashclick=false;
+  isDisplayNoteComponent=false;
+  isTrashComponent=false;
+  isArchieveComponent=false;
 
-  constructor(private note:NoteService,) { }
+  constructor(private note:NoteService,private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
-    // this.id=this.data.id;
-    // this.title=this.data.title;
-    //  this.description=this.data.description; 
-    //this.archievebutton()
-    console.log("message ",this.childMsg);
+    //console.log("message ",this.childMsg);
+
+    let SelComp = this.route.snapshot.component;
+
+    if(SelComp==DisplaynoteComponent)
+    {
+      this.isDisplayNoteComponent=true;
+    }
+
+    if(SelComp==TrashComponent)
+    {
+      this.isTrashComponent=true;
+    }
+
+    if(SelComp==ArchiveComponent)
+    {
+      this.isArchieveComponent=true;
+    }
   }
 
   archievebutton()
@@ -53,8 +73,19 @@ export class IconsComponent implements OnInit {
       this.refresh.emit(this.trashMessage);
     })
   }
-  // trashShow()
-  // {
-  //   this.trashclick=true;
-  // }
+
+  unarchivenotes(){
+    let data = {
+      noteIdList: [this.childMsg.id],
+      isArchived: false,
+    }
+    this.note.archieveService(data).subscribe((res:any)=>{
+      console.log("unarchive a note",res);
+      this.refresh.emit(this.archieveMessage);
+    })
+  }
+   trashShow()
+   {
+     this.trashclick=true;
+   }
 }

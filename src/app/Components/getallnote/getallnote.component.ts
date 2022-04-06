@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { NoteService } from 'src/app/Services/noteService/note.service';
 
@@ -9,7 +9,7 @@ import { NoteService } from 'src/app/Services/noteService/note.service';
 })
 export class GetallnoteComponent implements OnInit {
  notelist:any;
- public arrayNote=[] as any;
+
   constructor(private formbuilder:FormBuilder,private noteservice:NoteService) { }
 
   ngOnInit(): void {
@@ -22,6 +22,7 @@ export class GetallnoteComponent implements OnInit {
     {
       console.log("res=",res.data.data);
       this.notelist=res.data.data
+      
       this.notelist=this.notelist.filter(function(ele:any)
       {
         return ele.isDeleted === false && ele.isArchived === false;
