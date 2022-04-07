@@ -48,7 +48,6 @@ export class IconsComponent implements OnInit {
 
   archievebutton()
   {
-
     let data={
       noteIdList:[this.childMsg.id],
       isArchived:true,
@@ -84,8 +83,17 @@ export class IconsComponent implements OnInit {
       this.refresh.emit(this.archieveMessage);
     })
   }
-   trashShow()
-   {
-     this.trashclick=true;
-   }
+  deleteForeverNotes()
+  {
+    let data={
+      noteIdList:[this.childMsg.id],
+      isDeleted:true,
+    }
+    this.note.deleteNotesForever(data).subscribe((res:any)=>
+    {
+      console.log("delete note forever = ",res);
+      this.refresh.emit(this.trashMessage);
+    })
+  }
+   
 }
