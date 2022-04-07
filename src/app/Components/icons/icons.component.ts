@@ -96,4 +96,15 @@ export class IconsComponent implements OnInit {
     })
   }
    
+  restoreNotes()
+  {
+    let data = {
+      noteIdList: [this.childMsg.id],
+      isDeleted: false,
+    }
+    this.note.trashService(data).subscribe((res:any)=>{
+    console.log("note restored",res);
+    this.refresh.emit(this.trashMessage);
+    })
+  }
 }
