@@ -18,10 +18,14 @@ export class IconsComponent implements OnInit {
   @Output() refresh = new EventEmitter<any>();
   archieveMessage="refresh archieve"
   trashMessage="trash refresh"
+  colorMessage="color pallete refresh"
+
   trashclick=false;
   isDisplayNoteComponent=false;
   isTrashComponent=false;
   isArchieveComponent=false;
+
+  colorsArr = [{Colorcode:"#f28b82"},{Colorcode:"#fbbc04"},{Colorcode:"#fff475"},{Colorcode:"#ccff90"},{Colorcode:"#a7ffeb"},{Colorcode:"#cbf0f8"},{Colorcode:"#aecbfa"},{Colorcode:"#aecbfa"},{Colorcode:"#d7aefb"},{Colorcode:"#fdcfe8"},{Colorcode:"#e6c9a8"},{Colorcode:"#e8eaed"}];
 
   constructor(private note:NoteService,private route: ActivatedRoute,) { }
 
@@ -107,4 +111,18 @@ export class IconsComponent implements OnInit {
     this.refresh.emit(this.trashMessage);
     })
   }
+
+  colorNotesforBackground(color:any)
+  {
+    let data = {
+      color: color,
+      noteIdList: [this.childMsg.id],
+    }
+
+    this.note.colorPallete(data).subscribe((res:any)=>{
+      console.log("color a note",res);
+      this.refresh.emit(this.colorMessage);
+    })
+  }
+  
 }

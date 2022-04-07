@@ -116,4 +116,17 @@ export class NoteService {
     }
     return this.httpservice.postMethodService('notes/deleteForeverNotes',data,true,header)
   }
+
+  colorPallete(data:any){
+    console.log("token",this.token);
+  
+   let header ={
+     headers: new HttpHeaders({
+       'Content-type': 'application/json',
+        'Authorization': this.token
+     })
+   }
+   return this.httpservice.postMethodService('notes/changesColorNotes',data,true,header)
+  }
+  
 }
