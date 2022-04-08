@@ -1,19 +1,25 @@
 <div *ngIf="(!isDisplayNoteComponent && isArchieveComponent || !isTrashComponent ); else Trash">
+
     <div class="iconsSetting">
+
         <button style="background-color: transparent; border: none;"><img src="../../../assets/add_alert_black_24dp.svg"></button> 
         <button style="border: 0px;background-color: transparent;"><img src="../../../assets/person_add_alt_black_24dp.svg"></button>
-        <!-- <button style="background-color: transparent;"> Abcd</button> -->
+        
         <div class="imageSetting">
             <button mat-button [matMenuTriggerFor]="background_color" style="border: 0px;background-color:transparent"><img src="../../../assets/palette_black_24dp.svg"></button>
             <mat-menu #background_color="matMenu">
-                <div *ngFor="let color of colorsArr" class="pallete">
-                    <button class="colorboxSetting" [style.background]="color?.Colorcode" (click)="colorNotesforBackground(color?.Colorcode)"></button>
+                <div style="display: flex;flex-flow: row wrap;width: auto;">
+                    <div *ngFor="let color of colorsArr" class="pallete">
+                        <button class="colorboxSetting" [style.background]="color?.Colorcode" (click)="colorNotesforBackground(color?.Colorcode)"></button>
+                    </div>
                 </div>
+               
             </mat-menu>
         </div>
         
 
         <button style="border: 0px;background-color: transparent;"><img src="../../../assets/image_black_24dp.svg"></button>
+        
         <div *ngIf="!isArchieveComponent; else unarchieve">
             <button (click)="archievebutton()" style="border: 0px;background-color: transparent;"><img src="../../../assets/archive_black_24dp.svg"></button>
         </div>

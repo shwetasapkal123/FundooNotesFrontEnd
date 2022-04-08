@@ -36,7 +36,5 @@ export class DisplaynoteComponent implements OnInit {
   {
     console.log(event);
     this.refreshEvent.emit(this.displayMessage)
-    //console.log(this.displayMessage);
-    // this.refreshEvent.emit(this.displayMessage)
   }
 }

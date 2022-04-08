@@ -7,28 +7,23 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-getallnote',
   templateUrl: './getallnote.component.html',
-  styleUrls: ['./getallnote.component.scss'],
-  template: `
-    {{message}}
-  `,
-  
+  styleUrls: ['./getallnote.component.scss'],  
 })
 export class GetallnoteComponent implements OnInit {
  notelist:any;
 
- message!: string;
   subscription: Subscription = new Subscription;
 
   constructor(private formbuilder:FormBuilder,private noteservice:NoteService,private data: DataService) { }
 
   ngOnInit(): void {
+
     this.getallnotes()
 
-    this.subscription = this.data.currentMessage.subscribe((message: string) => this.message = message)
-  }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
+    this.data.currentMessage.subscribe((message:string) => {
+      console.log(message);
+      this.getallnotes()})
   }
 
   getallnotes()

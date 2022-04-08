@@ -58,15 +58,12 @@ export class RegistrationComponent implements OnInit {
   showdatacheckbox()
   {
     this.show=true;
-//    var showdata=document.getElementById('')
      if(this.show==true)
     {
      type:'text';
-//   //     value: 1;
     }
     else{
-     type:'password';
-      
+     type:'password';     
    }
   }
 

@@ -8,10 +8,6 @@ import { Subscription } from 'rxjs';
   selector: 'app-update',
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.scss'],
-  template: `
-    {{message}}
-    <button (click)="newMessage()">New Message</button>
-  `,
 })
 export class UpdateComponent implements OnInit {
   id:any;
@@ -20,8 +16,6 @@ export class UpdateComponent implements OnInit {
   @Output() refreshUpdate = new EventEmitter<any>();
   upateMessage="refresh Update"
 
-  message!: string;
-  subscription: Subscription = new Subscription;
 
 
   constructor(private note:NoteService, public dialogRef: MatDialogRef<UpdateComponent>,
@@ -33,15 +27,7 @@ export class UpdateComponent implements OnInit {
     this.description=this.data.description;
     //console.log("data= ",this.data)
     // this.onNoClick()
-    this.subscription = this.dataup.currentMessage.subscribe(message => this.message = message)
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
-
-  newMessage() {
-    this.data.changeMessage("Hello from Sibling")
+    
   }
 
   onNoClick(): void {
@@ -55,6 +41,7 @@ export class UpdateComponent implements OnInit {
     this.note.updateService(data).subscribe((res:any)=>
     {
       console.log("update response=",res);
+      this.dataup.changeMessage("res")
       this.refreshUpdate.emit(res)
     })
     this.dialogRef.close();
