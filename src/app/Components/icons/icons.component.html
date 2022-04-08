@@ -8,7 +8,7 @@
         <div class="imageSetting">
             <button mat-button [matMenuTriggerFor]="background_color" style="border: 0px;background-color:transparent"><img src="../../../assets/palette_black_24dp.svg"></button>
             <mat-menu #background_color="matMenu">
-                <div style="display: flex;flex-flow: row wrap;width: auto;">
+                <div style="display: flex;flex-flow: row wrap; width: 120px;">
                     <div *ngFor="let color of colorsArr" class="pallete">
                         <button class="colorboxSetting" [style.background]="color?.Colorcode" (click)="colorNotesforBackground(color?.Colorcode)"></button>
                     </div>
