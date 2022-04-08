@@ -40,18 +40,18 @@
         <div class="Spaces">
             <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
-                <input  matInput placeholder="Password" id="Showdata" formControlName="password">
+                <input matInput type="password" placeholder="Password" formControlName="password">
                 <mat-error>Enter valid password</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Confirm</mat-label>
-                <input matInput placeholder="Confirm password" formControlName="confirmpassword">
+                <input matInput type="password"  placeholder="Confirm password" formControlName="confirmpassword">
                 <mat-error>Password not match</mat-error>
             </mat-form-field>
             <mat-hint style="font-size: small;padding-left: 14px;">Use 8 or more characters with a mix of letters, numbers & symbols </mat-hint>
             <div>
-                <mat-checkbox style="margin-top: 20px;" onclick="myFunction()">Show password</mat-checkbox>
-                <script type="text/javascript">
+                <mat-checkbox type="checkbox" style="margin-top: 20px;" (click)="showdatacheckbox()">Show password</mat-checkbox>
+                <!-- <script type="text/javascript">
                     function myFunction()
                     {
                         var show=document.getElementById('Showdata');
@@ -63,7 +63,7 @@
                             show.type='password';
                         }
                     }
-                </script>
+                </script> -->
             </div>
             
             <div class="Spacesforbutton">

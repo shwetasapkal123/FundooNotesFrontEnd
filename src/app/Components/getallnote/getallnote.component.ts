@@ -1,21 +1,36 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { NoteService } from 'src/app/Services/noteService/note.service';
+import { DataService } from 'src/app/Services/data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-getallnote',
   templateUrl: './getallnote.component.html',
-  styleUrls: ['./getallnote.component.scss']
+  styleUrls: ['./getallnote.component.scss'],
+  template: `
+    {{message}}
+  `,
+  
 })
 export class GetallnoteComponent implements OnInit {
  notelist:any;
 
-  constructor(private formbuilder:FormBuilder,private noteservice:NoteService) { }
+ message!: string;
+  subscription: Subscription = new Subscription;
+
+  constructor(private formbuilder:FormBuilder,private noteservice:NoteService,private data: DataService) { }
 
   ngOnInit(): void {
     this.getallnotes()
+
+    this.subscription = this.data.currentMessage.subscribe((message: string) => this.message = message)
   }
-  
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
   getallnotes()
   {
     this.noteservice.Servicegetallnotes().subscribe((res:any)=>

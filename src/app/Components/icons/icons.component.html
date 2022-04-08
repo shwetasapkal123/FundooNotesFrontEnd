@@ -1,11 +1,10 @@
-<!-- <p>icons works!</p> -->
 <div *ngIf="(!isDisplayNoteComponent && isArchieveComponent || !isTrashComponent ); else Trash">
     <div class="iconsSetting">
-        <button style="border: 0px;background-color: white;"><img src="../../../assets/add_alert_black_24dp.svg"></button> 
-        <button style="border: 0px;background-color: white;"><img src="../../../assets/person_add_alt_black_24dp.svg"></button>
-
+        <button style="background-color: transparent; border: none;"><img src="../../../assets/add_alert_black_24dp.svg"></button> 
+        <button style="border: 0px;background-color: transparent;"><img src="../../../assets/person_add_alt_black_24dp.svg"></button>
+        <!-- <button style="background-color: transparent;"> Abcd</button> -->
         <div class="imageSetting">
-            <button mat-button [matMenuTriggerFor]="background_color" style="border: 0px;background-color: white;"><img src="../../../assets/palette_black_24dp.svg"></button>
+            <button mat-button [matMenuTriggerFor]="background_color" style="border: 0px;background-color:transparent"><img src="../../../assets/palette_black_24dp.svg"></button>
             <mat-menu #background_color="matMenu">
                 <div *ngFor="let color of colorsArr" class="pallete">
                     <button class="colorboxSetting" [style.background]="color?.Colorcode" (click)="colorNotesforBackground(color?.Colorcode)"></button>
@@ -14,12 +13,12 @@
         </div>
         
 
-        <button style="border: 0px;background-color: white;"><img src="../../../assets/image_black_24dp.svg"></button>
+        <button style="border: 0px;background-color: transparent;"><img src="../../../assets/image_black_24dp.svg"></button>
         <div *ngIf="!isArchieveComponent; else unarchieve">
-            <button (click)="archievebutton()" style="border: 0px;background-color: white;"><img src="../../../assets/archive_black_24dp.svg"></button>
+            <button (click)="archievebutton()" style="border: 0px;background-color: transparent;"><img src="../../../assets/archive_black_24dp.svg"></button>
         </div>
     
-        <button mat-button [matMenuTriggerFor]="more" style="border: 0px;background-color: white;"><img src="../../../assets/more_vert_black_24dp.svg"></button>
+        <button mat-button [matMenuTriggerFor]="more" style="border: 0px;background-color: transparent;"><img src="../../../assets/more_vert_black_24dp.svg"></button>
         <mat-menu #more="matMenu">
         <button mat-menu-item (click)="trashbutton()">Delete note</button>
         </mat-menu>
@@ -28,13 +27,16 @@
     
 </div>
 
-<ng-template #Trash>
-    <div style="margin-left: -30px;">
-        <button (click)="deleteForeverNotes()" style="border: 0px;background-color: white;"><img src="../../../assets/delete_forever_black_24dp.svg"></button>
-        <button (click)="restoreNotes()" style="border: 0px;background-color: white;"><img src="../../../assets/restore_from_trash_black_24dp.svg"></button>
-    </div>
-</ng-template>
+<div>
+    <ng-template #Trash>
+        <div style="margin-left: -30px;">
+            <button (click)="deleteForeverNotes()" style="border: 0px;background-color: white;"><img src="../../../assets/delete_forever_black_24dp.svg"></button>
+            <button (click)="restoreNotes()" style="border: 0px;background-color: white;"><img src="../../../assets/restore_from_trash_black_24dp.svg"></button>
+        </div>
+    </ng-template>
+    
+    <ng-template #unarchieve>
+        <button style="border: 0px;background-color: white;" (click)="unarchivebutton()"><img src="../../../assets/unarchive_black_24dp.svg"></button>
+    </ng-template>
+</div>
 
-<ng-template #unarchieve>
-    <button style="border: 0px;background-color: white;" (click)="unarchivebutton()"><img src="../../../assets/unarchive_black_24dp.svg"></button>
-</ng-template>

@@ -31,6 +31,7 @@ export class UserServiceService {
   }
   resetpassword(data:any)
   {
+    console.log(data);
     let header ={
       headers: new HttpHeaders({
         'Content-type': 'application/json'     
