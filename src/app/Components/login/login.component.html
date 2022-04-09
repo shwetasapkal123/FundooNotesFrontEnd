@@ -1,42 +1,45 @@
-<div class="borderStylelogin">
+<div class="borderStylelogin" fxLayout="row" >
     <form [formGroup]="loginForm" (ngSubmit)="OnSubmit()">
-    <div style="padding-left: 70px;">
-        <h1>
-            <span style="color: blue; padding-left: 100px;">F</span>
-            <span style="color: red;">u</span>
-            <span style="color: orange;">n</span>
-            <span style="color: blue;">d</span>
-            <span style="color: green;">o</span>
-            <span style="color: red;">o</span>
-            <h1 style="padding-left: 100px;">Sign in</h1>
-        </h1>
-        <!-- <p style="font-size: medium;padding-left: 50px;">Use your Google Account</p> -->
-        <a mat-button style="font-size: medium; color: black; padding-left: 60px;" >Use your Google Account</a> 
-    </div>
-    <div >
-        <mat-form-field class="designEmail" appearance="outline">
-            <mat-label>Email or Phone</mat-label>
-            <input matInput placeholder="Email" formControlName="email">
-            <mat-error>Enter valid Email id</mat-error>
-        </mat-form-field>
-        <button mat-button class="buttonStyleForForgot"  routerLink="/mailsearch">Forgot email?</button>
-    </div>
-    <div class="Spaces">
-        <mat-form-field style="width: 90%;" appearance="outline">
-            <mat-label>Password</mat-label>
-            <input style="width: 100%;" matInput placeholder="Password" formControlName="password">
-            <mat-error>Enter valid password</mat-error>
-        </mat-form-field>  
-    </div>
-    <div>
-        <mat-hint mat-button style="color: gray; margin-top: 30px;">Not your computer? Use Guest mode to sign in privately.</mat-hint>       
-    </div>
-    <div>
-        <a mat-button style="color: blue;">Learn more</a>
-    </div>
-    <div class="Spacesforbutton">
-        <button mat-button class="buttonStyleforCreate" routerLink="/signup">Create account</button>
-        <button mat-button class="buttonStyleforNext">Next</button>
-    </div>
+        <div fxLayout="column" ngClass.xs="fxClass-xs">
+            <div style="padding-left: 70px;">
+                <h1>
+                    <span style="color: blue; padding-left: 100px;">F</span>
+                    <span style="color: red;">u</span>
+                    <span style="color: orange;">n</span>
+                    <span style="color: blue;">d</span>
+                    <span style="color: green;">o</span>
+                    <span style="color: red;">o</span>
+                    <h1 style="padding-left: 100px;">Sign in</h1>
+                </h1>
+                <!-- <p style="font-size: medium;padding-left: 50px;">Use your Google Account</p> -->
+                <a mat-button style="font-size: medium; color: black; padding-left: 60px;" >Use your Google Account</a> 
+            </div>
+            <div >
+                <mat-form-field class="designEmail" appearance="outline">
+                    <mat-label>Email or Phone</mat-label>
+                    <input matInput placeholder="Email" formControlName="email">
+                    <mat-error>Enter valid Email id</mat-error>
+                </mat-form-field>
+                <button mat-button class="buttonStyleForForgot"  routerLink="/mailsearch">Forgot email?</button>
+            </div>
+            <div class="Spaces">
+                <mat-form-field style="width: 90%;" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input style="width: 100%;" matInput placeholder="Password" formControlName="password">
+                    <mat-error>Enter valid password</mat-error>
+                </mat-form-field>  
+            </div>
+            <div>
+                <mat-hint mat-button style="color: gray; margin-top: 30px;">Not your computer? Use Guest mode to sign in privately.</mat-hint>       
+            </div>
+            <div>
+                <a mat-button style="color: blue;">Learn more</a>
+            </div>
+            <div class="Spacesforbutton">
+                <button mat-button class="buttonStyleforCreate" routerLink="/signup">Create account</button>
+                <button mat-button class="buttonStyleforNext">Next</button>
+            </div>
+        </div>
+    
   </form>
 </div>

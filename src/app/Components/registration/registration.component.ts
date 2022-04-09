@@ -12,8 +12,10 @@ export class RegistrationComponent implements OnInit {
   registerForm!:FormGroup;
   submitted=false;
   show=false;
+  isPass=false;
+  inputTypePass:string="password";
 
-  constructor(private formBuilder: FormBuilder,private user:UserServiceService) { }
+  constructor(private formBuilder: FormBuilder,private user:UserServiceService, private shareMsg:UserServiceService) { }
 
   ngOnInit(): void {
     this.registerForm=this.formBuilder.group({
@@ -24,6 +26,10 @@ export class RegistrationComponent implements OnInit {
       confirmpassword:['',Validators.required],
       service:['advance']
     });
+  }
+
+  passwordShow(event:any):void{
+    event.target.checked ? this.inputTypePass="text" : this.inputTypePass="password";
   }
   
   OnSubmit(){
@@ -58,7 +64,8 @@ export class RegistrationComponent implements OnInit {
   showdatacheckbox()
   {
     this.show=true;
-     if(this.show==true)
+    this.shareMsg.updateData(this.passChange().valueOf());
+     if(this.isPass==true)
     {
      type:'text';
     }
@@ -66,7 +73,17 @@ export class RegistrationComponent implements OnInit {
      type:'password';     
    }
   }
-
+  passChange()
+  {
+    if(this.isPass==false){
+      this.isPass=true
+      return this.isPass
+    }
+    else{
+      this.isPass=false
+      return this.isPass
+    }
+  }
 }
 
 

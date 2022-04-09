@@ -59,16 +59,5 @@ export class CreatenoteComponent implements OnInit {
   {
     this.note=false;
   }
-  // onNoteClick()
-  // {
-  //   this.note=false;
-  //   if(this.note=true)
-  //   {
-  //     console.log("title");
-  //   }
-  //   else
-  //   {
-  //     console.log("234");
-  //   }
-  // }
+  
 }

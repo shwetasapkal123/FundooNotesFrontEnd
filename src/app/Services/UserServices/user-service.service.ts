@@ -1,5 +1,6 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { HttpserviceService } from '../httpServices/httpservice.service';
 
 @Injectable({
@@ -7,8 +8,14 @@ import { HttpserviceService } from '../httpServices/httpservice.service';
 })
 export class UserServiceService {
 
+  private info = new Subject<any>();
+  public store = this.info.asObservable();
+
   constructor(private httpservice:HttpserviceService) { }
 
+  updateData(text:any){
+    this.info.next(text);
+  }
   registration(data:any)
   {
     let header ={
