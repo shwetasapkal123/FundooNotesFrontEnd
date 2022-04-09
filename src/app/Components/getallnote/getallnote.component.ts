@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class GetallnoteComponent implements OnInit {
  notelist:any;
-
+ gridList:any
   subscription: Subscription = new Subscription;
 
   constructor(private formbuilder:FormBuilder,private noteservice:NoteService,private data: DataService) { }

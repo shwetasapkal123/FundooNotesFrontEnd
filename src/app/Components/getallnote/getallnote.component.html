@@ -1,4 +1,4 @@
 <!-- <p>getallnote works!</p> -->
  <!-- <app-createnote></app-createnote>  -->
    <app-createnote (messageEvent)="receiveMessage($event)"></app-createnote>  
-  <app-displaynote [childMsg]="notelist" (refreshEvent)="receiveMessage($event)" (refreshUpdate)="receiveMessage($event)"></app-displaynote>  
+  <app-displaynote [childMsg]="notelist" (refreshEvent)="receiveMessage($event)" (refreshUpdate)="receiveMessage($event)" [class.gridToList]="gridList"></app-displaynote>  

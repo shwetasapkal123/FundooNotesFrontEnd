@@ -59,31 +59,31 @@ export class RegistrationComponent implements OnInit {
   onReset() {
     this.submitted = false;
     this.registerForm.reset();
-}
+  }
 
-  showdatacheckbox()
-  {
-    this.show=true;
-    this.shareMsg.updateData(this.passChange().valueOf());
-     if(this.isPass==true)
-    {
-     type:'text';
-    }
-    else{
-     type:'password';     
-   }
-  }
-  passChange()
-  {
-    if(this.isPass==false){
-      this.isPass=true
-      return this.isPass
-    }
-    else{
-      this.isPass=false
-      return this.isPass
-    }
-  }
+  // showdatacheckbox()
+  // {
+  //   this.show=true;
+  //   this.shareMsg.updateData(this.passChange().valueOf());
+  //    if(this.isPass==true)
+  //   {
+  //    type:'text';
+  //   }
+  //   else{
+  //    type:'password';     
+  //  }
+  // }
+  // passChange()
+  // {
+  //   if(this.isPass==false){
+  //     this.isPass=true
+  //     return this.isPass
+  //   }
+  //   else{
+  //     this.isPass=false
+  //     return this.isPass
+  //   }
+  // }
 }
 
 

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateComponent } from '../update/update.component';
 import { filter } from 'rxjs';
+import { GridListViewService } from 'src/app/Services/gridListdata/grid-list-view.service';
 
 
 @Component({
@@ -11,14 +12,16 @@ import { filter } from 'rxjs';
 })
 export class DisplaynoteComponent implements OnInit {
  note:any;
+ //viewFormat:any
   @Input() childMsg:any;
   @Output() refreshEvent = new EventEmitter<any>();
   
   displayMessage="note refresh"
-  constructor(public dialog: MatDialog) { }
+  gridList: any;
+  constructor(public dialog: MatDialog,private nextData:GridListViewService) { }
 
   ngOnInit(): void {
-    
+    this.nextData.store.subscribe(a=>this.gridList=a)
   }
 
   openDialog(note:any): void {

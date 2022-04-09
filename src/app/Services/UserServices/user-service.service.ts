@@ -8,14 +8,14 @@ import { HttpserviceService } from '../httpServices/httpservice.service';
 })
 export class UserServiceService {
 
-  private info = new Subject<any>();
-  public store = this.info.asObservable();
+  // private info = new Subject<any>();
+  // public store = this.info.asObservable();
 
   constructor(private httpservice:HttpserviceService) { }
 
-  updateData(text:any){
-    this.info.next(text);
-  }
+  // updateData(text:any){
+  //   this.info.next(text);
+  // }
   registration(data:any)
   {
     let header ={
