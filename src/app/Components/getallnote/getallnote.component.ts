@@ -20,7 +20,6 @@ export class GetallnoteComponent implements OnInit {
 
     this.getallnotes()
 
-
     this.data.currentMessage.subscribe((message:string) => {
       console.log(message);
       this.getallnotes()})

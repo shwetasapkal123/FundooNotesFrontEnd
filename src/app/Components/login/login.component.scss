@@ -2,10 +2,10 @@
 {
   border: 1px solid #dadcdf;
   width: 500px;  
-  margin-left: 200px;
-  margin-top: 200px; 
-  padding-top: 50px;
-    padding-bottom: 90px;
+  margin-left: 80px;
+  margin-top: 50px; 
+  padding-top: 40px;
+    padding-bottom: 80px;
     padding-left: 20px;
     //align-content: center; 
     justify-content: center;
@@ -14,18 +14,19 @@
 }
 .designEmail
 {
-  width: 90%;
-  padding-right: 50px;
+  width: 80%;
+  padding-right: 40px;
+  padding-left: 30px;
 }
 .Spaces .mat-form-field + .mat-form-field{
-  margin-left: 20px;
+  margin-left: 10px;
   width: 100%;
   margin-top: 30px;
 }
 .Spacesforbutton 
 {
   display: flex;
-  gap: 10px 200px;
+  gap: 20px 220px;
   width: 490px;
   color: blue;
   margin-top: 70px;
@@ -34,10 +35,11 @@
 }
 .buttonStyleforCreate
 {
+  padding-left: 40px;
   border: 0px;
   color: blue;
   font-size: medium;
-  background-color: white;
+  background-color: transparent;
 }
 .buttonStyleforNext
 {
@@ -51,5 +53,6 @@
   border: 0px;
   color: blue;
   font-size: small;
-  background-color: white;
+  background-color: transparent;
+  padding-left: 40px;
 }

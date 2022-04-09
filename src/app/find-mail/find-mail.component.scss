@@ -1,14 +1,14 @@
 .UnderBorederStyle{
     display: flexbox;
     border: 1px solid gray;
-    width: 30%;
-    margin-top: 200px;
-    margin-left: 50px;
-    padding-left: 50px;
-    padding-top: 50px;
+    width: 150%;
+    margin-top: 100px;
+    margin-left: 30px;
+    padding-left: 20px;
+    padding-top: 30px;
     align-content: center;
-    padding-bottom: 100px;
-    height: 80%;
+    padding-bottom: 80px;
+    height: 90%;
   }
   .borderStyle
   {
@@ -19,12 +19,13 @@
 {
   width: 80%;
   padding-left: 20px;
+  padding-right: 20px;
 }
 .buttonStyleforNext
     {
       border: 0px;
       color: white;
-      margin-left: 250px;
+      margin-left: 230px;
       background-color: blue;
       height: 40px;width: 70px;
     }

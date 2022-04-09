@@ -17,7 +17,6 @@ export class UpdateComponent implements OnInit {
   upateMessage="refresh Update"
 
 
-
   constructor(private note:NoteService, public dialogRef: MatDialogRef<UpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,private dataup: DataService) { }
 
