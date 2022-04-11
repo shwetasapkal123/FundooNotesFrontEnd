@@ -1,9 +1,9 @@
  <!-- <p>update works!</p>  -->
- <div fxLayout="row wrap">
-   <div fxLayout="column"  fxLayoutAlign="space-around center" class="noteDisplaySetting">
+ <div fxLayout="row wrap" [style.background]="data.color" style="padding-left: 5px;">
+   <div fxLayout="column"  fxLayoutAlign="space-around center" class="noteDisplaySetting" [style.background]="data.color">
 
-    <input type="text" placeholder="Title" style="font-size: larger;height: 20px;width: 100%;" [(ngModel)]="title">
-    <input type="text" placeholder="description" style="font-size: medium;margin-top: 10px;margin-left: 1px;height: 20px;width: 100%;"[(ngModel)]="description">
+    <input type="text" placeholder="Title" style="font-size: larger;height: 20px;width: 100%;background-color: transparent;border: none;" [(ngModel)]="title">
+    <input type="text" placeholder="description" style="font-size: medium;margin-top: 10px;height: 20px;width: 100%;background-color: transparent;"[(ngModel)]="description">
 
     
     

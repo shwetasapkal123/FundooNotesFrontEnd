@@ -16,10 +16,6 @@ export class UpdateComponent implements OnInit {
   notecolor:any;
   @Output() refreshUpdate = new EventEmitter<any>();
   upateMessage="refresh Update"
-  colorMessage="color pallete refresh"
-
-  colorsArr = [{Colorcode:"#f28b82"},{Colorcode:"#fbbc04"},{Colorcode:"#fff475"},{Colorcode:"#ccff90"},{Colorcode:"#a7ffeb"},{Colorcode:"#cbf0f8"},{Colorcode:"#aecbfa"},{Colorcode:"#aecbfa"},{Colorcode:"#d7aefb"},{Colorcode:"#fdcfe8"},{Colorcode:"#e6c9a8"},{Colorcode:"#e8eaed"}];
-
 
   constructor(private note:NoteService, public dialogRef: MatDialogRef<UpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,private dataup: DataService) { }
@@ -50,16 +46,4 @@ export class UpdateComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  colorBackground(color:any)
-  {
-    let data = {
-      color: color,
-      noteIdList: [this.id],
-    }
-
-    this.note.colorPallete(data).subscribe((res:any)=>{
-      console.log("color a note",res);
-      this.refreshUpdate.emit(this.colorMessage);
-    })
-  }
 }
