@@ -1,5 +1,6 @@
 <div fxLayout="row wrap">
-        <div *ngFor="let note of childMsg" fxLayout="column"  fxLayoutAlign="space-around center" class="noteDisplaySetting" [style.background]="note.color" [class.gridToList]="gridList">
+        <div *ngFor="let note of childMsg | filter:filteredString" fxLayout="column"  fxLayoutAlign="space-around center" class="noteDisplaySetting" [style.background]="note.color" [class.gridToList]="gridList">
+                
                 <div>
                         <p style="font-size: medium;font: bold;margin-left: -100px;" (click)="openDialog(note)" >{{note.title}}</p>
                         <p style="margin-left: -100px;" (click)="openDialog(note)">{{note.description}}</p>

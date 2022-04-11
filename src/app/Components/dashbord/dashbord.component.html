@@ -8,7 +8,7 @@
 
       <div class="wholesearchbox">
         <img style=" color: #5f6368;margin-left: 10px; height: 30px;" src="../../../assets/search_black_24dp.svg">    
-        <input class="inputSearchbox" type="text" placeholder="Search">
+         <input class="inputSearchbox" type="text" placeholder="Search" (keyup)="filter($event)"> <!--[(ngModel)]="filteredString"-->
       </div>
    
        <button style="border: 0px;background-color: white; padding-left: 30px;"><img style="padding-top: 10px;" src="../../../assets/refresh_black_24dp.svg"></button> 
@@ -17,12 +17,13 @@
         <button style="border: 0px;background-color: white; padding-left: 20px;" (click)="formatListView();FormatView()"><img style="padding-top: 10px;" src="../../../assets/view_agenda_black_24dp.svg"></button>
        </div>
        <div *ngIf="grid">
-          <button style="border: 0px;background-color: white; padding-left: 20px;" (click)="formatGridView();FormatView()"><img style="padding-top: 12px;" src="../../../assets/grid_view_black_24dp.svg"></button>
+          <button class="button" (click)="formatGridView();FormatView()"><img style="padding-top: 12px;" src="../../../assets/grid_view_black_24dp.svg"></button>
        </div>
         
-        <button style="border: 0px;background-color: white;padding-left: 20px;"><img style="padding-top: 10px;" src="../../../assets/settings_black_24dp.svg"></button> 
-        <button style="border: 0px;background-color: white;padding-left: 20px;"><img style="padding-top: 10px;" src="../../../assets/apps_black_24dp.svg"></button> 
-        <button style="border: 0px;background-color: white;padding-left: 20px;"><img style="padding-top: 10px;" src="../../../assets/person_outline_black_24dp.svg"></button>     
+        <button class="button"><img style="padding-top: 10px;" src="../../../assets/settings_black_24dp.svg"></button> 
+        
+        <button class="button"><img style="padding-top: 10px;" src="../../../assets/apps_black_24dp.svg"></button> 
+        <button class="button" (click)="logout()"><img style="padding-top: 10px;" src="../../../assets/person_outline_black_24dp.svg"></button>     
     </mat-toolbar>
   
     <mat-sidenav-container class="example-sidenav-container"

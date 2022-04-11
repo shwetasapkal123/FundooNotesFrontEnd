@@ -46,4 +46,14 @@ export class UserServiceService {
     }
     return this.httpservice.postMethodService('user/reset',data,false,header);
   }
+
+  logout(data:any)
+  {
+    let header ={
+      headers: new HttpHeaders({
+        'Content-type': 'application/json'     
+      })
+  }
+  return this.httpservice.postMethodService('user/logout',data,true,header)
+  }
 }

@@ -34,6 +34,7 @@ import { EditLabesComponent } from './Components/edit-labes/edit-labes.component
 import { RemindersComponent } from './Components/reminders/reminders.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { AuthguardServiceService } from './Services/authguard-service.service';
+import { FilterPipe } from './Pipes/filter.pipe';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { AuthguardServiceService } from './Services/authguard-service.service';
     TrashComponent,
     EditLabesComponent,
     RemindersComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
