@@ -29,3 +29,11 @@
       padding: 0;
     }
   }
+
+  .allicons{
+    display: none;
+}
+
+.noteDisplaySetting:hover .allicons{
+    display: block;
+}
