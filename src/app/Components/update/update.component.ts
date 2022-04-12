@@ -13,7 +13,7 @@ export class UpdateComponent implements OnInit {
   id:any;
   title:any;
   description:any;
-  notecolor:any;
+  //notecolor:any;
   @Output() refreshUpdate = new EventEmitter<any>();
   upateMessage="refresh Update"
 
@@ -24,6 +24,7 @@ export class UpdateComponent implements OnInit {
     this.id=this.data.id;
    this.title=this.data.title;
     this.description=this.data.description;
+    //this.notecolor=this.data.color;
     //console.log("data= ",this.data)
     // this.onNoClick()
     
@@ -44,6 +45,10 @@ export class UpdateComponent implements OnInit {
       this.refreshUpdate.emit(res)
     })
     this.dialogRef.close();
+  }
+
+  receiveMessage($event:any){
+    this.onNoClick()
   }
 
 }

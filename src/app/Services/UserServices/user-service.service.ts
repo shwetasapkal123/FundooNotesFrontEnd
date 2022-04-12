@@ -58,14 +58,14 @@ export class UserServiceService {
   }
   resetpassword(data:any,token:any)
   {
-    console.log(data);
+    console.log(data,token);
     let header ={
       headers: new HttpHeaders({
-        'Content-type': 'application/json' ,
+        'Content-Type': 'application/x-www-form-urlencoded',
         'Authorization':token,    
       })
     }
-    return this.httpservice.postMethodService('user/reset-password',this.encode(data),false,header);
+    return this.httpservice.postMethodService('user/reset-password',this.encode(data),true,header);
   }
 
   logout(data:any)

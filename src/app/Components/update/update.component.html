@@ -8,7 +8,7 @@
     
     
     <div style="display: flex;">
-      <app-icons style="margin-top: 30px;" [childMsg]="data"></app-icons>
+      <app-icons style="margin-top: 30px;" [childMsg]="data" (refresh)="receiveMessage($event)"></app-icons>
       <button (click)="onNoClick()" class="closeButton">update</button>      
     </div>
     

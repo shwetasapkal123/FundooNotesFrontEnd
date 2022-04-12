@@ -30,8 +30,8 @@ export class ResetpasswordComponent implements OnInit {
       console.log(this.resetPassword.value);
 
       let data={
-        email:this.resetPassword.value.email,
-        password:this.resetPassword.value.password
+
+         newPassword:this.resetPassword.value.password
       }
       this.user.resetpassword(data,this.token).subscribe((res:any)=>
       {

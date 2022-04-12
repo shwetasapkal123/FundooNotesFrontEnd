@@ -4,23 +4,23 @@
       <form [formGroup]="createNoteForm" (ngSubmit)="OnSubmit()"> 
 
             <div *ngIf="showTitle">
-               <input type="text" style="height:50px;width: 450px;border: 0px;" placeholder="title" formControlName="title" ngClass.xs="descBar-xs" ngClass.sm="descBar-sm"> 
-               <img style="padding-left: 100px;" src="../../../assets/push_pin_black_24dp.svg">
+               <input type="text" class="takenoteSeting" placeholder="title" formControlName="title" ngClass.xs="descBar-xs" ngClass.sm="descBar-sm"> 
+               <img ngClass.sm="pin-sm" ngClass.xs="pin-xs" style="margin-left: 120px;" src="../../../assets/push_pin_black_24dp.svg">
             </div>
 
             <div *ngIf="!showTitle  || showTitle">
                 <input type="text" class="takenoteSeting" (click)="show()" placeholder="Take a note..." formControlName="takeNote" ngClass.xs="descBar-xs" ngClass.sm="descBar-sm">  
                 <span *ngIf="!showTitle" fxHide.xs="true" fxHide.sm="true">
-                  <img src="../../../assets/check_box_black_24dp.svg">
-                <img style="padding-left: 20px;" src="../../../assets/brush_black_24dp (1).svg">               
-                <img style="padding-left: 30px;" src="../../../assets/image_black_24dp.svg">
+                  <img style="padding-left: 10px;" src="../../../assets/check_box_black_24dp.svg">
+                <img style="padding-left: 10px;" src="../../../assets/brush_black_24dp (1).svg">               
+                <img style="padding-left: 10px;" src="../../../assets/image_black_24dp.svg">
                 </span>
                 
             </div>   
-            <div *ngIf="showTitle" >
+            <div *ngIf="showTitle"  ngClass.xs="close-xs" ngClass.sm="close-sm">
                   <button mat-button class="closebuttonSetting">close</button>
             </div> 
-            <div *ngIf="showTitle" ngClass.sm="icon-sm">
+            <div *ngIf="showTitle" ngClass.sm="icon-sm" ngClass.xs="icon-xs">
                   <app-icons></app-icons>
             </div>  
      
