@@ -9,6 +9,8 @@ import { NoteService } from 'src/app/Services/noteService/note.service';
 })
 export class CreatenoteComponent implements OnInit {
   [x: string]: any;
+  title:any;
+  desc:any;
   showTitle=false;
   public note:boolean=true;
   createNoteForm!: FormGroup;
@@ -27,6 +29,7 @@ export class CreatenoteComponent implements OnInit {
 
   OnSubmit(){
     this.submitted=true;
+    this.showTitle=false;
     console.log(this.createNoteForm.value);
     if(this.createNoteForm.valid)
     {
@@ -54,6 +57,7 @@ export class CreatenoteComponent implements OnInit {
   close()
   {
     this.showTitle=false;
+    console.log(this.title, this.desc);
   }
   onNoteClick()
   {

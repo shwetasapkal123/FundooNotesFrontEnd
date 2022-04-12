@@ -1,5 +1,5 @@
  <!-- <p>update works!</p>  -->
- <div fxLayout="row wrap" [style.background]="data.color" style="padding-left: 5px;">
+ <div fxLayout="row wrap" [style.background]="data.color" style="padding-left: 5px;margin: 0px;">
    <div fxLayout="column"  fxLayoutAlign="space-around center" class="noteDisplaySetting" [style.background]="data.color">
 
     <input type="text" placeholder="Title" style="font-size: larger;height: 20px;width: 100%;background-color: transparent;border: none;" [(ngModel)]="title">
@@ -8,8 +8,8 @@
     
     
     <div style="display: flex;">
-      <app-icons style="margin-top: 30px;"></app-icons>
-      <button (click)="onNoClick()" class="closeButton">close</button>      
+      <app-icons style="margin-top: 30px;" [childMsg]="data"></app-icons>
+      <button (click)="onNoClick()" class="closeButton">update</button>      
     </div>
     
    </div>

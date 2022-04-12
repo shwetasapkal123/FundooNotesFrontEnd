@@ -48,13 +48,13 @@ export class DashbordComponent implements OnDestroy {
   }
 
   formatListView() {
-    this.grid = false
+    this.grid = true
     this.nextData.nextDataUpdate(this.FormatView().valueOf())
     console.log("value ", this.FormatView())
   }
 
   formatGridView() {
-    this.grid = true
+    this.grid = false
     this.nextData.nextDataUpdate(this.FormatView().valueOf())
     console.log("value ", this.FormatView())
   }

@@ -1,49 +1,74 @@
 <!-- <p>dashbord works!</p> -->
 
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-    <mat-toolbar  class="example-toolbar">
-      <button style="border: 0px;" mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" fxLayout="column">
+  <mat-toolbar class="example-toolbar">
+    <div fxLayout="row" ngClass.xs="menu-xs" fxLayout.xs="row" fxLayout.xs="10">
+      <button style="border: 0px;" mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+
+    <div fxLayout="row" fxHide.xs="true" fxHide.sm="true">
       <img class="keepImage" src="../../../assets/keep_2020q4_48dp.png">
+    </div>
+
+    <div fxLayout="row" fxLayout.xs="row">
       <h1 class="example-app-name">Fundoo</h1>
+    </div>
 
-      <div class="wholesearchbox">
-        <img style=" color: #5f6368;margin-left: 10px; height: 30px;" src="../../../assets/search_black_24dp.svg">    
-         <input class="inputSearchbox" type="text" placeholder="Search" (keyup)="filter($event)"> <!--[(ngModel)]="filteredString"-->
-      </div>
-   
-       <button style="border: 0px;background-color: white; padding-left: 30px;"><img style="padding-top: 10px;" src="../../../assets/refresh_black_24dp.svg"></button> 
+    <div class="wholesearchbox" ngClass.xs="div_wrraper-xs" ngClass.md="div_wrraper-md" ngClass.sm="div_wrraper-sm">
+      <img style="margin-left: 10px; height: 30px;" src="../../../assets/search_black_24dp.svg">
+      <input class="inputSearchbox" type="text" placeholder="Search" (keyup)="filter($event)">
+      <!--[(ngModel)]="filteredString"-->
+    </div>
 
-       <div *ngIf="!grid">
-        <button style="border: 0px;background-color: white; padding-left: 20px;" (click)="formatListView();FormatView()"><img style="padding-top: 10px;" src="../../../assets/view_agenda_black_24dp.svg"></button>
-       </div>
-       <div *ngIf="grid">
-          <button class="button" (click)="formatGridView();FormatView()"><img style="padding-top: 12px;" src="../../../assets/grid_view_black_24dp.svg"></button>
-       </div>
-        
-        <button class="button"><img style="padding-top: 10px;" src="../../../assets/settings_black_24dp.svg"></button> 
-        
-        <button class="button"><img style="padding-top: 10px;" src="../../../assets/apps_black_24dp.svg"></button> 
-        <button class="button" (click)="logout()"><img style="padding-top: 10px;" src="../../../assets/person_outline_black_24dp.svg"></button>     
-    </mat-toolbar>
-  
-    <mat-sidenav-container class="example-sidenav-container"
-                           [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                   [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
-        <mat-nav-list>
-          <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a> -->
-          <a mat-list-item routerLink="./getallnotes"><img class="icon" src="../../../assets/lightbulb_black_24dp.svg">Notes</a>
-          <a mat-list-item routerLink="./reminders"><img class="icon" src="../../../assets/notifications_black_24dp.svg">Reminders</a>
-          <a mat-list-item routerLink="./editlabel"><img class="icon" src="../../../assets/edit_black_24dp.svg">Edit labels</a>
-          <a mat-list-item routerLink="./archieve"><img class="icon" src="../../../assets/archive_black_24dp.svg">Archive</a>
-          <a mat-list-item routerLink="./trash"><img class="icon" src="../../../assets/delete_black_24dp.svg">Trash</a>
-        </mat-nav-list>
-      </mat-sidenav>
-  
-       <mat-sidenav-content>
-        <router-outlet></router-outlet> 
-      </mat-sidenav-content> 
-    </mat-sidenav-container>
-  </div>
-  
-  
+    <div fxHide.xs="true" fxHide.sm="true">
+      <button style="border: 0px;background-color: white; padding-left: 30px;"><img style="padding-top: 10px;"
+          src="../../../assets/refresh_black_24dp.svg"></button>
+    </div>
+
+
+    <div *ngIf="!grid" ngClass.xs="list-xs" ngClass.sm="list-sm">
+      <button style="border: 0px;background-color:transparent; padding-left: 20px;"
+        (click)="formatListView();FormatView()"><img style="padding-top: 10px;"
+          src="../../../assets/view_agenda_black_24dp.svg"></button>
+    </div>
+    <div *ngIf="grid" ngClass.xs="list-xs" ngClass.sm="list-sm">
+      <button class="button" (click)="formatGridView();FormatView()"><img style="padding-top: 12px;"
+          src="../../../assets/grid_view_black_24dp.svg"></button>
+    </div>
+    <div fxHide.xs="true" fxHide.sm="true">
+      <button class="button"><img style="padding-top: 10px;" src="../../../assets/settings_black_24dp.svg"></button>
+    </div>
+    <div fxHide.xs="true" fxHide.sm="true">
+      <button class="button"><img style="padding-top: 10px;" src="../../../assets/apps_black_24dp.svg"></button>
+    </div>
+    <div ngClass.xs="toolbar_image_xs" ngClass.sm="toolbar_image_sm">
+      <button class="button" (click)="logout()"><img style="padding-top: 10px;"
+          src="../../../assets/person_outline_black_24dp.svg"></button>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56">
+      <mat-nav-list>
+        <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a> -->
+        <a mat-list-item routerLink="./getallnotes"><img class="icon"
+            src="../../../assets/lightbulb_black_24dp.svg">Notes</a>
+        <a mat-list-item routerLink="./reminders"><img class="icon"
+            src="../../../assets/notifications_black_24dp.svg">Reminders</a>
+        <a mat-list-item routerLink="./editlabel"><img class="icon" src="../../../assets/edit_black_24dp.svg">Edit
+          labels</a>
+        <a mat-list-item routerLink="./archieve"><img class="icon"
+            src="../../../assets/archive_black_24dp.svg">Archive</a>
+        <a mat-list-item routerLink="./trash"><img class="icon" src="../../../assets/delete_black_24dp.svg">Trash</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -36,15 +36,36 @@ export class UserServiceService {
     }
     return this.httpservice.postMethodService('user/login',data,false,header);
   }
-  resetpassword(data:any)
+
+  forgot(data:any){
+  
+    let header ={
+      headers: new HttpHeaders({
+        'Content-type': 'application/json'      
+      })
+    }
+    return this.httpservice.postMethodService('user/reset',data,false,header)
+  }
+
+  encode(data: any) {
+    const formBody = [];
+    for (const property in data) {
+      const encodedKey = encodeURIComponent(property);
+      const encodedValue = encodeURIComponent(data[property]);
+      formBody.push(encodedKey + '=' + encodedValue);
+    }
+    return formBody.join('&');
+  }
+  resetpassword(data:any,token:any)
   {
     console.log(data);
     let header ={
       headers: new HttpHeaders({
-        'Content-type': 'application/json'     
+        'Content-type': 'application/json' ,
+        'Authorization':token,    
       })
     }
-    return this.httpservice.postMethodService('user/reset',data,false,header);
+    return this.httpservice.postMethodService('user/reset-password',this.encode(data),false,header);
   }
 
   logout(data:any)

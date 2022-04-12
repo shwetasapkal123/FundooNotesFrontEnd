@@ -22,3 +22,37 @@
 {
     margin-left:520px; border: 0px;font-size: large;background-color: white;margin-top: 20px;
 }
+.descBar{
+    width: 600px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: white;
+    border: none;
+}
+
+.descBar-xs{
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    //border: 2px solid red;
+}
+
+.descBar-sm{
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+}
+.icon-sm{
+    margin-top: -5px;
+}
+.createNote-sm
+{
+    width: 500px;
+    margin-left: 20px;
+}
+.createNote-xs
+{
+    width: 450px;
+    margin-left: 5px;
+}
+

@@ -13,9 +13,10 @@ import { TrashComponent } from '../trash/trash.component';
 })
 export class IconsComponent implements OnInit {
   //message: any;
-  @Input() childMsg:any;
+  @Input() childMsg:any; 
 
   @Output() refresh = new EventEmitter<any>();
+
   archieveMessage="refresh archieve"
   trashMessage="trash refresh"
   colorMessage="color pallete refresh"

@@ -28,7 +28,7 @@ export class FindMailComponent implements OnInit {
       let data= {
         email:this.mailSearch.value.email,
     }
-    this.user.resetpassword(data).subscribe((response:any)=>{
+    this.user.forgot(data).subscribe((response:any)=>{
       console.log("done",response);
         // this.forgotForm.reset();
     })
