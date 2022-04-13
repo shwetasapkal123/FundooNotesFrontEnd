@@ -36,6 +36,7 @@ export class GetallnoteComponent implements OnInit {
       {
         return ele.isDeleted === false && ele.isArchived === false;
       })
+      console.log(this.notelist.reverse());
     })
   }
   
